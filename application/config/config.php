@@ -1,6 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/**
+ * @param $classname, String - class mame
+ */
+function __autoload($classname)
+{
+    if( strpos( $classname, 'CI_' ) !== 0 )
+    {
+        $file = APPPATH . 'libraries/' . $classname . '.php';
+        if( file_exists($file) && is_file($file) )
+        {
+            @include_once( $file );
+        }
+    }
+}
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] =  $_SERVER['HTTP_X_FORWARDED_PROTO']. '://' . $_SERVER['HTTP_HOST'];
+$config['base_url'] =  '';
+//$config['base_url'] =  $_SERVER['HTTP_X_FORWARDED_PROTO']. '://' . $_SERVER['HTTP_HOST'];
 
 /*
 |--------------------------------------------------------------------------
