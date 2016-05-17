@@ -1,0 +1,12 @@
+body
+{
+    background: url("http://localhost:8000/sg_CMS/assets/uploads/static/rp_bg_body.gif") repeat;
+}
+
+.body
+{
+    padding: 10px;
+    min-height: 100%;
+    height: 100%;
+    background-color: white;
+}
