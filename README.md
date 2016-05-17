@@ -1,1 +1,1 @@
-# GlobalCMS
+# CMS

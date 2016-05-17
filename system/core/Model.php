@@ -39,7 +39,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * Model Class
- *
  * @property CI_DB_active_record $db              This is the platform-independent base Active Record implementation class.
  * @property CI_DB_forge $dbforge                 Database Utility Class
  * @property CI_Benchmark $benchmark              This class enables you to mark points and calculate the time difference between them.<br />  Memory consumption can also be displayed.
@@ -65,6 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property CI_Profiler $profiler                This class enables you to display benchmark, query, and other data<br />in order to help with debugging and optimization.
  * @property CI_Router $router                    Parses URIs and determines routing
  * @property CI_Session $session                  Session Class
+ * @property CI_Sha1 $sha1                        Provides 160 bit hashing using The Secure Hash Algorithm
  * @property CI_Table $table                      HTML table generation<br />Lets you create tables manually or from database result objects, or arrays.
  * @property CI_Trackback $trackback              Trackback Sending/Receiving Class
  * @property CI_Typography $typography            Typography Class
@@ -72,6 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property CI_Upload $upload                    File Uploading Class
  * @property CI_URI $uri                          Parses URIs and determines routing
  * @property CI_User_agent $user_agent            Identifies the platform, browser, robot, or mobile devise of the browsing agent
+ * @property CI_Validation $validation            //dead
  * @property CI_Xmlrpc $xmlrpc                    XML-RPC request handler class
  * @property CI_Xmlrpcs $xmlrpcs                  XML-RPC server class
  * @property CI_Zip $zip                          Zip Compression Class
@@ -81,11 +82,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property CI_Security $security                Security Class, xss, csrf, etc...
  * @property CI_Driver_Library $driver            CodeIgniter Driver Library Class
  * @property CI_Cache $cache                      CodeIgniter Caching Class
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/libraries/config.html
  */
 class CI_Model {
 

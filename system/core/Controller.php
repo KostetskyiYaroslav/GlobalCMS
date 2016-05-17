@@ -42,7 +42,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * This class object is the super class that every library in
  * CodeIgniter will be assigned to.
- *
  * @property CI_DB_active_record $db              This is the platform-independent base Active Record implementation class.
  * @property CI_DB_forge $dbforge                 Database Utility Class
  * @property CI_Benchmark $benchmark              This class enables you to mark points and calculate the time difference between them.<br />  Memory consumption can also be displayed.
@@ -86,11 +85,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property CI_Security $security                Security Class, xss, csrf, etc...
  * @property CI_Driver_Library $driver            CodeIgniter Driver Library Class
  * @property CI_Cache $cache                      CodeIgniter Caching Class
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/general/controllers.html
  */
 class CI_Controller {
 
