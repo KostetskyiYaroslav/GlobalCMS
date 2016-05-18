@@ -67,14 +67,14 @@ class Posts extends MY_Controller
     {
         $data = array
         (
-            'title' => 'TitleInsertTest',
-            'slug' => 'TitleInseasdasdasdasdasdasdasdasdasdrtTest',
-            'body' => 'BodyInseasdasdrtTest',
-            'author_id' => 1,
-            'attachment' => '',
-            'date' => date('Y-m-d H:i:s'),
-            'tags' => 1,
-            'category_id' => 1
+            'title'         => 'TitleInsertTest',
+            'slug'          => 'TitleInseasdasdasdasdasdasdasdasdasdrtTest',
+            'body'          => 'BodyInseasdasdrtTest',
+            'author_id'     => 1,
+            'attachment'    => '',
+            'date'          => date('Y-m-d H:i:s'),
+            'tags'          => 1,
+            'category_id'   => 1
         );
 
         $pages = $this->Model_posts->save($data, 3);

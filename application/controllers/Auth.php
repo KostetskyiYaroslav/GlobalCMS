@@ -39,10 +39,11 @@ class Auth extends MY_Controller
         {
             $user = [];
 
-            $user['login']      = $this->input->get_post('login');
-            $user['password']   = $this->input->get_post('password');
-            $user['password']   = do_hash( $user['password'] );
-            $user['email']      = $this->input->get_post('email');
+            $user['login']          = $this->input->get_post('login');
+            $user['password']       = $this->input->get_post('password');
+            $user['password']       = do_hash( $user['password'] );
+            $user['email']          = $this->input->get_post('email');
+            $user['date_created']   = date('Y-m-d H:i:s');
 
             if( $user['email'] == '')
             {
