@@ -7,6 +7,6 @@
         <li role="separator" class="divider"></li>
         <li><a href="#">Separated link</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="#">Separated link</a></li>
+        <li><a href="#">Client Menu</a></li>
     </ul>
 </li>
