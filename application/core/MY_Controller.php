@@ -33,5 +33,16 @@ class MY_Controller extends CI_Controller
         }
         $this->data['users'] = $this->Model_users->get_users();
         $this->data['posts'] = $this->Model_posts->get_posts();
+
+        function cmp($a, $b)
+        {
+            if ($a->post_date == $b->post_date) {
+                return 0;
+            }
+
+            return ($a->post_date < $b->post_date) ? 1 : -1;
+        }
+
+        usort($this->data['posts'], "cmp");
     }
 }
