@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f7aebe0-bfcc-4f4d-909b-57687a5fcba8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/Users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/posts/view_edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/view_edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/view_new.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/view_single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/uploads/Thumbs.db" afterPath="$PROJECT_DIR$/assets/uploads/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/uploads/static/Thumbs.db" afterPath="$PROJECT_DIR$/assets/uploads/static/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Auth.php" afterPath="$PROJECT_DIR$/application/controllers/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Posts.php" afterPath="$PROJECT_DIR$/application/controllers/Posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/MY_Controller.php" afterPath="$PROJECT_DIR$/application/core/MY_Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_posts.php" afterPath="$PROJECT_DIR$/application/models/Model_posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_users.php" afterPath="$PROJECT_DIR$/application/models/Model_users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_menu.php" afterPath="$PROJECT_DIR$/application/views/admin/view_menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/components/view_header.php" afterPath="$PROJECT_DIR$/application/views/components/view_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_posts.php" afterPath="$PROJECT_DIR$/application/views/menu/view_posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_users.php" afterPath="$PROJECT_DIR$/application/views/menu/view_users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/posts/view_posts.php" afterPath="$PROJECT_DIR$/application/views/posts/view_posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/view_main.php" afterPath="$PROJECT_DIR$/application/views/view_main.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/posts/view_single_post.php" afterPath="$PROJECT_DIR$/application/views/posts/view_single.php" />
-    </list>
+    <list default="true" id="8f7aebe0-bfcc-4f4d-909b-57687a5fcba8" name="Default" comment="" />
     <ignored path="Ukraspace CMS.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -57,20 +32,6 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - ci3db@ci3.ukrspace.com" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="posts" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -78,7 +39,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view_edit.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="view_edit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/posts/view_edit.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -89,6 +50,16 @@
                 <element signature="n#p#2;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#p#3;n#div#0;n#div#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b5c89468-8f12-469c-8a9f-b46ca924f727/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -357,16 +328,16 @@
       <workItem from="1463559231851" duration="11442000" />
       <workItem from="1463573433869" duration="5685000" />
       <workItem from="1463588163703" duration="977000" />
-      <workItem from="1463583167900" duration="11779000" />
+      <workItem from="1463583167900" duration="12403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74000000" />
+    <option name="totallyTimeSpent" value="74624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277202" sideWeight="0.507732" order="7" side_tool="true" content_ui="tabs" />
@@ -376,7 +347,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18251929" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18251929" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18059126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3609694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -614,19 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b5c89468-8f12-469c-8a9f-b46ca924f727/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="n#roles#0" expanded="false" />
-            <element signature="n#users#0" expanded="false" />
-            <element signature="n#categories#0" expanded="false" />
-            <element signature="n#posts#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/75dcbd06/b5c89468-8f12-469c-8a9f-b46ca924f727/ci3db.users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -838,6 +796,14 @@
             <element signature="n#p#2;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#p#3;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b5c89468-8f12-469c-8a9f-b46ca924f727/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
