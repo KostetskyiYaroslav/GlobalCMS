@@ -76,5 +76,37 @@ class Model_users extends MY_Model
         return $this->db->get()->$method();
     }
 
+    public function get_users_by( $where, $single = FALSE )
+    {
+        if( $where != NULL )
+        {
+            $method = 'row';
+
+            $this->db->where( $where );
+
+        } elseif ( $single == TRUE ) {
+
+            $method = 'row';
+
+        } else {
+
+            $method = 'result';
+        }
+
+        $this->db->select(
+            '`u`.`id`  AS id
+           , `u`.`login` AS login
+           , `u`.`password` AS password
+           , `u`.`email` AS email
+           , `u`.`role_id` AS role_id
+           , `u`.`date_created` AS date_created
+           , `r`.`name` AS role_name
+           , `r`.`access_lvl` AS role_access_lvl'
+        );
+        $this->db->from('users AS u');
+        $this->db->join('roles AS r', 'r.id = u.role_id'  );
+
+        return $this->db->get()->$method();
+    }
 
 }

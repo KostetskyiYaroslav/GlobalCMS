@@ -22,7 +22,7 @@ class Model_posts extends MY_Model
             $id     = $filter( $id );
             $method = 'row';
 
-            $this->db->where( $this->primary_key, $id );
+            $this->db->where( ['`p`.`id`' => $id ] );
 
         } elseif ( $single == TRUE ) {
 
