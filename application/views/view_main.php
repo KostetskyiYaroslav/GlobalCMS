@@ -14,7 +14,7 @@
                             <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets\\uploads\\".$post->post_attachment)?>">
                         <?php endif;  ?>
                         <p class="col-xs-8">
-                            <?php $post->post_body = substr( $post->post_body, 0, 600 );?>
+                            <?php $post->post_body = substr( $post->post_body, 0, 200 );?>
                             <?php echo $post->post_body . '...'; ?>
                             <?php echo anchor('posts/view/'.$post->post_slug, 'Click for more...'); ?>
                         </p>
