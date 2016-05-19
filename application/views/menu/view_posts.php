@@ -1,6 +1,6 @@
 <div class="container body">
     <div class="row col-xs-12">
-        <div class="users">
+        <div class="posts">
             <table class="table table-bordered">
                 <thead>
                 <tr>
