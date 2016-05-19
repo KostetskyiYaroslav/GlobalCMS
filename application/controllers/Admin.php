@@ -259,93 +259,120 @@ class Admin extends MY_Controller
     public function post_save()
     {
         $data       = array();
-        $condition  = true;
-        $title      = $slug = $body = $author_id = $attachment = $date = $tags = $category_id = null;
+        $condition  = TRUE;
+        $id = $this->uri->segment(3);
+        $message = NULL;
+        $this->load->view( 'components/view_header',
+            [
+                'title' => 'Edit User',
+                'auth'  => $this->data['auth'],
+                'user'  => $this->data['user']
+            ]
+        );
 
-        if (isset($_POST['title']))
+        if(isset($_POST['save-post-title']))
         {
-            if(isset($_POST['title']))
+            $title = $body = $author_id = $attachment = $date = $tags = $category_id = $slug = NULL;
+
+            if(isset($_POST['save-post-title']) && $_POST['save-post-title'] != '')
             {
-                $title = $this->input->get_post('title');
-
-            } else {
-
-                $condition = false;
-            }
-            if(isset($_POST['slug']))
-            {
-                $slug = $this->input->get_post('slug');
-
-            } else {
-
-                $slug = $this->_make_slug($title);
-            }
-            if(isset($_POST['body']))
-            {
-                $body = $this->input->get_post('body');
+                $title = $this->input->get_post('save-post-title');
 
             } else {
 
                 $condition = FALSE;
             }
-            if(isset($_POST['attachment']))
+            if(isset($_POST['save-post-body']) && $_POST['save-post-body'] != '')
             {
-                $attachment = $this->input->get_post('attachment');
+                $body = $this->input->get_post('save-post-body');
 
             } else {
 
-                $attachment = '';
+                $condition = FALSE;
             }
-            if(isset($_POST['date']))
+            if(isset($_POST['save-post-author_id']) && $_POST['save-post-author_id'] != '')
             {
-                $date           = $this->input->get_post('date');
+                $author_id = $this->input->get_post('save-post-author_id');
 
             } else {
 
-                $date           = date('Y-m-d H:i:s');
+                $condition = FALSE;
             }
-            if(isset($_POST['tags']))
+            if(isset($_POST['save-post-attachment']) && $_POST['save-post-attachment'] != '')
             {
-                $tags           = $this->input->get_post('tags');
+                $attachment = $this->input->get_post('save-post-attachment');
 
             } else {
 
-                $tags           = '';
+                $attachment = 'default-post.png';
             }
-            if(isset($_POST['author_id']))
+            if(isset($_POST['save-post-date']) && $_POST['save-post-date'] != '')
             {
-                $author_id           = $this->input->get_post('author_id');
+                $date = $this->input->get_post('save-post-date');
 
             } else {
 
-                $condition = false;
+                $date = date('Y-m-d H:i:s');
             }
-            if(isset($_POST['category_id']))
+            if(isset($_POST['save-post-tags']))
             {
-                $category_id           = $this->input->get_post('category_id');
+                $tags = $this->input->get_post('save-post-tags');
+
+            } else {
+
+                $tags = '';
+            }
+            if(isset($_POST['save-post-category_id']) && $_POST['save-post-category_id'] != '')
+            {
+                $category_id = $this->input->get_post('save-post-category_id');
+
+            } else {
+
+                $category_id = 1;
+            }
+            if(isset($_POST['save-post-slug']) && $_POST['save-post-slug'] != '')
+            {
+                $slug = $this->input->get_post('save-post-slug');
+
+            } else {
+
+                $slug = $this->_make_slug($title);
             }
 
-            $data = array
-            (
-                'title'         => $title ,
-                'slug'          => $slug ,
-                'body'          => $body ,
-                'author_id'     => $author_id ,
-                'attachment'    => $attachment  ,
-                'date'          => $date ,
-                'tags'          => $tags ,
-                'category_id'   => $category_id
-            );
+            if( $condition )
+            {
+                $data = [
+                    'title'         => $title       ,
+                    'body'          => $body        ,
+                    'author_id'     => $author_id   ,
+                    'attachment'    => $attachment  ,
+                    'date'          => $date        ,
+                    'tags'          => $tags        ,
+                    'category_id'   => $category_id ,
+                    'slug'          => $slug
+                ];
+
+                $this->Model_posts->save($data, $id);
+                $message = 'Post successfully saved!';
+            } else {
+
+                $message = 'Post data error! Try again!';
+            }
         }
 
-//        Update $pages = $this->Model_posts->save($data, 3);
-        $pages = $this->Model_posts->save($data);
-        var_dump($pages);
+        $this->load->view('posts/view_save',
+            [
+                'message'       => $message
+            ]
+        );
+
     }
-    public function post_edit($id)
+
+    public function post_edit()
     {
         $data       = array();
         $condition  = TRUE;
+        $id = $this->uri->segment(3);
         $update_post    = $this->Model_posts->get_posts($id, TRUE);
         $message = NULL;
         $this->load->view( 'components/view_header',
@@ -360,53 +387,69 @@ class Admin extends MY_Controller
         {
             $title = $body = $author_id = $attachment = $date = $tags = $category_id = $slug = NULL;
 
-            $id             = $this->input->get_post('update-post-id');
+            if(isset($_POST['update-post-title']) && $_POST['update-post-title'] != '')
+            {
+                $title = $this->input->get_post('update-post-title');
 
-            if(isset($_COOKIE['update-post-title']) && $_COOKIE['update-post-title'] != '')
-            {
-                $title          = $this->input->get_post('update-post-title');
             } else {
-                $condition = FALSE;
+
+                $title = $update_post->post_title;
             }
-            if(isset($_COOKIE['update-post-body']) && $_COOKIE['update-post-body'] != '')
+            if(isset($_POST['update-post-body']) && $_POST['update-post-body'] != '')
             {
-                $body           = $this->input->get_post('update-post-body');
+                $body = $this->input->get_post('update-post-body');
+
             } else {
-                $condition = FALSE;
+
+                $body = $update_post->post_body;
             }
-            if(isset($_COOKIE['update-post-author_id']) && $_COOKIE['update-post-author_id'] != '')
+            if(isset($_POST['update-post-author_id']) && $_POST['update-post-author_id'] != '')
             {
-                $author_id      = $this->input->get_post('update-post-author_id');
+                $author_id = $this->input->get_post('update-post-author_id');
+
             } else {
-                $condition = FALSE;
+
+                $author_id = $update_post->post_author_id;
             }
-            if(isset($_COOKIE['update-post-attachment']) )
+            if(isset($_POST['update-post-attachment']) && $_POST['update-post-attachment'] != '')
             {
-                $attachment     = $this->input->get_post('update-post-attachment');
-            }
-            if(isset($_COOKIE['update-post-date']) && $_COOKIE['update-post-date'] != '')
-            {
-                $date           = $this->input->get_post('update-post-date');
+                $attachment = $this->input->get_post('update-post-attachment');
+
             } else {
-                $date           = $update_post->post_date;
+
+                $attachment = $update_post->post_attachment;
             }
-            if(isset($_COOKIE['update-post-tags']))
+            if(isset($_POST['update-post-date']) && $_POST['update-post-date'] != '')
             {
-                $tags           = $this->input->get_post('update-post-tags');
+                $date = $this->input->get_post('update-post-date');
+
             } else {
-                $tags           = $update_post->post_tags;
+
+                $date = $update_post->post_date;
             }
-            if(isset($_COOKIE['update-post-category_id']))
+            if(isset($_POST['update-post-tags']) && $_POST['update-post-tags'] != '')
             {
-                $category_id    = $this->input->get_post('update-post-category_id');
+                $tags = $this->input->get_post('update-post-tags');
+
             } else {
-                $category_id    = $update_post->category_id;
+
+                $tags = $update_post->post_tags;
             }
-            if(isset($_COOKIE['update-post-slug']) && $_COOKIE['update-post-slug'] != '')
+            if(isset($_POST['update-post-category_id']) && $_POST['update-post-category_id'] != '')
             {
-                $slug           = $this->input->get_post('update-post-slug');
+                $category_id = $this->input->get_post('update-post-category_id');
+
             } else {
-                $slug           = $update_post->post_slug;
+
+                $category_id = $update_post->category_id;
+            }
+            if(isset($_POST['update-post-slug']) && $_POST['update-post-slug'] != '')
+            {
+                $slug = $this->input->get_post('update-post-slug');
+
+            } else {
+
+                $slug = $update_post->post_slug;
             }
 
             $data = [
@@ -421,7 +464,7 @@ class Admin extends MY_Controller
             ];
 
             $this->Model_posts->save($data, $id);
-            $message = 'User successfully updated!';
+            $message = 'Post successfully updated!';
         }
 
         if(empty($update_post))
