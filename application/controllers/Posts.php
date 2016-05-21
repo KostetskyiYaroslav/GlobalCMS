@@ -25,39 +25,35 @@ class Posts extends MY_Controller
         );
     }
 
-    public function view($where = NULL)
+    public function view($id = NULL)
     {
+        $this->load->helper( ['url', 'form'] );
 
-        if($where == NULL)
+        $this->load->view( 'components/view_header',
+            [
+                'title' => 'Welcome',
+                'auth'  => $this->data['auth'],
+                'user'  => $this->data['user']
+            ]
+        );
+
+        if($id == NULL)
         {
-            $this->load->view( 'components/view_header',
-                [
-                    'title' => 'Posts',
-                    'auth'  => $this->data['auth'],
-                    'user'  => $this->data['user']
-                ]
-            );
-            $this->load->view( 'posts/view_posts',
+            $this->load->view( 'view_main',
                 array
                 (
                     'posts' => $this->data['posts']
                 )
             );
+
         } else {
+            $single_post    = $this->Model_posts->get_posts($id, TRUE);
 
-            $this->data['post'] = $this->Model_posts->get_post_by( ['slug' => $where], true );
-
-            $this->load->view( 'components/view_header',
-                [
-                    'title' => 'Post',
-                    'auth'  => $this->data['auth'],
-                    'user'  => $this->data['user']
-                ]
-            );
-            $this->load->view( 'posts/view_single_post',
+            $this->load->view('posts/view_single',
                 array
                 (
-                    'post' => $this->data['post']
+                    'current_user'  => $this->data['user'],
+                    'single_post'  => $single_post
                 )
             );
         }
