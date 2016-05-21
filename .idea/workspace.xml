@@ -3,29 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f7aebe0-bfcc-4f4d-909b-57687a5fcba8" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/Categories.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Model_categories.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Model_templates.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/categories/view_categories.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/categories/view_single.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/menu/view_templates.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/templates/view_edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/templates/view_new.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/templates/view_single.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/templates/view_templates.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/dev_config.php" afterPath="$PROJECT_DIR$/application/config/dev_config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Auth.php" afterPath="$PROJECT_DIR$/application/controllers/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Main.php" afterPath="$PROJECT_DIR$/application/controllers/Main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Posts.php" afterPath="$PROJECT_DIR$/application/controllers/Posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/MY_Controller.php" afterPath="$PROJECT_DIR$/application/core/MY_Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/view_menu.php" afterPath="$PROJECT_DIR$/application/views/admin/view_menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/posts/view_posts.php" afterPath="$PROJECT_DIR$/application/views/posts/view_posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/posts/view_single.php" afterPath="$PROJECT_DIR$/application/views/posts/view_single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/view_main.php" afterPath="$PROJECT_DIR$/application/views/view_main.php" />
     </list>
     <ignored path="Ukraspace CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +41,20 @@
     <favorites_list name="Ukraspace CMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Categories.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Categories.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="24" />
+              <folding>
+                <element signature="e#199#415#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -407,19 +398,19 @@
       <workItem from="1463639869395" duration="9550000" />
       <workItem from="1463768026341" duration="7546000" />
       <workItem from="1463819455025" duration="5611000" />
-      <workItem from="1463857494993" duration="10616000" />
+      <workItem from="1463857494993" duration="11219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108310000" />
+    <option name="totallyTimeSpent" value="108913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1612" height="912" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16559279" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16559279" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277202" sideWeight="0.507732" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17525773" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -715,16 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Categories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#199#415#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/75dcbd06/b5c89468-8f12-469c-8a9f-b46ca924f727/ci3db.posts">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -916,6 +897,16 @@
         <state relative-caret-position="102">
           <caret line="6" column="56" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Categories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <element signature="e#199#415#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
