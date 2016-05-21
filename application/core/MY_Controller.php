@@ -13,6 +13,8 @@ class MY_Controller extends CI_Controller
 
         $this->load->model('Model_users');
         $this->load->model('Model_posts');
+        $this->load->model('Model_categories');
+        $this->load->model('Model_templates');
 
         $this->data['site_name']    = config_item('site_name');
         $this->data['error']        = array();
@@ -22,6 +24,9 @@ class MY_Controller extends CI_Controller
         $this->data['users']        = NULL;
         $this->data['pages']        = NULL;
         $this->data['comments']     = NULL;
+        $this->data['categories']   = NULL;
+        $this->data['sidebar']      = NULL;
+        $this->data['templates']    = NULL;
 
         if( isset($_COOKIE['CMS_login']) )
         {
@@ -31,8 +36,10 @@ class MY_Controller extends CI_Controller
             $this->data['user']->role   = $this->Model_users->get_role( ['login' => $login ] );
             $this->data['auth']         = TRUE;
         }
+        
         $this->data['users'] = $this->Model_users->get_users();
         $this->data['posts'] = $this->Model_posts->get_posts();
+        $this->data['categories'] = $this->Model_categories->get();
 
         function cmp($a, $b)
         {
