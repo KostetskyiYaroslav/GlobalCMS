@@ -34,11 +34,27 @@ CREATE TABLE ci3db.posts
   categorie_id INT(11) DEFAULT '1'
 );
 
-CREATE TABLE `ci3db`.`pages`
+CREATE TABLE ci3db.templates
 (
-  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `name` VARCHAR(100) NOT NULL,
-  `name` VARCHAR(100) NOT NULL,
+    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    template TEXT NOT NULL
+);
+
+CREATE TABLE ci3db.confirmation
+(
+    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `key` VARCHAR(255) NOT NULL,
+    login VARCHAR(100)
+);
+
+CREATE TABLE ci3db.comments
+(
+    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    body VARCHAR(255) NOT NULL,
+    date DATETIME NOT NULL,
+    author_id INT(11) NOT NULL,
+    post_id INT(11) NOT NULL
 );
 
 INSERT INTO `ci3db`.`roles`
