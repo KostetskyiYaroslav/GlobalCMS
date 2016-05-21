@@ -7,16 +7,16 @@
                 </h2>
                 <h3 class="col-xs-3 text-right">
                     <a href="" title="Come back" class="glyphicon glyphicon-step-backward" onclick="window.history.back();"></a>
-                    <?php if($current_user->role->access_lvl> 5) : ?>
+                    <?php if($current_user->role->access_lvl > 5 || $single_post->author_id == $current_user->id) : ?>
                         <a href="/admin/post_edit/<?php echo $single_post->post_id;?>" title="Edit Post" class="glyphicon glyphicon-edit" ></a>
                     <?php endif;?>
                 </h3>
             </div>
             <article class="">
                 <?php if($single_post->post_attachment == '') : ?>
-                    <img class="col-xs-4 img-thumbnail" src="<?=base_url('assets\uploads\welcome.jpg')?>">
+                    <img class="col-xs-4 img-thumbnail" src="<?=base_url('assets/uploads/static/default-post.png')?>">
                 <?php else : ?>
-                    <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets\\uploads\\".$single_post->post_attachment)?>">
+                    <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets/uploads/posts/".$single_post->post_attachment)?>">
                 <?php endif;  ?>
                 <p class="col-xs-8">
                     <?php echo $single_post->post_body; ?>
