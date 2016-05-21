@@ -21,10 +21,12 @@ class Main extends MY_Controller
             ]
         );
 
-        $this->load->view( 'view_main',
+        $this->load->view( 'posts/view_posts',
             array
             (
-                'posts' => $this->data['posts']
+                'posts' => $this->data['posts'],
+                'sidebar' => $this->data['sidebar'],
+                'categories' => $this->data['categories'],
             )
         );
     }
