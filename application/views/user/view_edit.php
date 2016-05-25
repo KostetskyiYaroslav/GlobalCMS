@@ -2,7 +2,7 @@
     <div class="row col-xs-9">
         <div class="col-xs-12">
             <h2 class="col-xs-6">
-                <?php echo $update_user->login; ?>
+                <?php echo $cabinet_user->login; ?>
             </h2>
             <h3 class="col-xs-6 text-right">
                 <a href="" title="Come back" class="glyphicon glyphicon-step-backward" onclick="window.history.back();"></a>
@@ -10,38 +10,38 @@
             </h3>
         </div>
         <?php echo form_open(); ?>
-        <?php if( TRUE || $update_user->avatar == '') : ?>
+        <?php if( TRUE || $cabinet_user->avatar == '') : ?>
             <img class="col-xs-4 img-thumbnail" src="<?=base_url('assets/uploads/static/default-user.png')?>">
         <?php else : ?>
-            <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets/uploads/users/".$update_user->post_attachment)?>">
+            <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets/uploads/users/".$cabinet_user->post_attachment)?>">
         <?php endif;  ?>
         <p class="col-xs-8">
             <label class="col-xs-6" for="update-id">User id:</label>
-            <?php echo form_input(['type'=>'number','value' => $update_user->id, 'class' => 'col-xs-6','disabled'=>'disabled']);?>
-            <?php echo form_input(['type'=>'number','value' => $update_user->id, 'class' => 'col-xs-6', 'id'=>'update-id', 'name'=>'update-id', 'hidden'=>'hidden']);?>
+            <?php echo form_input(['type'=>'number','value' => $cabinet_user->id, 'class' => 'col-xs-6','disabled'=>'disabled']);?>
+            <?php echo form_input(['type'=>'number','value' => $cabinet_user->id, 'class' => 'col-xs-6', 'id'=>'update-id', 'name'=>'update-id', 'hidden'=>'hidden']);?>
         </p>
         <p class="col-xs-8">
             <label class="col-xs-6" for="update-password">Password:</label>
-            <?php echo form_input(['type'=>'text','value' => $update_user->password, 'class' => 'col-xs-6', 'id'=>'update-password', 'name'=>'update-password']);?>
+            <?php echo form_input(['type'=>'text','value' => $cabinet_user->password, 'class' => 'col-xs-6', 'id'=>'update-password', 'name'=>'update-password']);?>
         </p>
         <p class="col-xs-8">
             <label class="col-xs-6" for="update-email">Email:</label>
-            <?php echo form_input(['type'=>'email','value' => $update_user->email, 'class' => 'col-xs-6', 'id'=>'update-email', 'name'=>'update-email']);?>
+            <?php echo form_input(['type'=>'email','value' => $cabinet_user->email, 'class' => 'col-xs-6', 'id'=>'update-email', 'name'=>'update-email']);?>
         </p>
         <p class="col-xs-8">
             <label class="col-xs-6" for="update-role-id">Role id:</label>
-            <?php echo form_input(['type'=>'number','value' => $update_user->role_id, 'class' => 'col-xs-6', 'id'=>'update-role-id', 'name'=>'update-role-id']);?>
+            <?php echo form_input(['type'=>'number','value' => $cabinet_user->role_id, 'class' => 'col-xs-6', 'id'=>'update-role-id', 'name'=>'update-role-id']);?>
         </p>
         <p class="col-xs-8">
             <label class="col-xs-6"  for="update-date">Date created:</label>
-            <?php echo form_input(['type'=>'datetime','value' => $update_user->date_created, 'class' => 'col-xs-6', 'id'=>'update-date', 'name'=>'update-date']);?>
+            <?php echo form_input(['type'=>'datetime','value' => $cabinet_user->date_created, 'class' => 'col-xs-6', 'id'=>'update-date', 'name'=>'update-date']);?>
         </p>
         <p class="col-xs-8 text-right">
             <?php echo form_input(['type'=>'submit','value' => 'Edit', 'class' => 'btn']);?>
         </p>
         <?php echo form_close(); ?>
         <div class="col-xs-9">
-            <p class="popover-title container">
+            <p class="row popover-title">
                 <?php echo $message; ?>
             </p>
         </div>

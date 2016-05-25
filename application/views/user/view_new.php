@@ -6,7 +6,6 @@
             </h2>
             <h3 class="col-xs-6 text-right">
                 <a href="" title="Come back" class="glyphicon glyphicon-step-backward" onclick="window.history.back();"></a>
-                <a href="" title="Edit user" class="glyphicon glyphicon-edit" ></a>
             </h3>
         </div>
         <?php echo form_open('', ['class="form"'])?>
@@ -23,7 +22,7 @@
         <input type="submit" class="btn" value="Create"/>
         <?php echo form_close()?>
         <div class="col-xs-9">
-            <p class="popover-title container">
+            <p class="popover-title">
                 <?php echo $message;?>
             </p>
         </div>

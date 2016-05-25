@@ -16,7 +16,7 @@
                 <?php if( TRUE || $single_user->avatar == '') : ?>
                     <img class="col-xs-4 img-thumbnail" src="<?=base_url('assets/uploads/static/default-user.png')?>">
                 <?php else : ?>
-                    <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets/uploads/users/".$single_user->post_attachment)?>">
+                    <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets/uploads/users/".$single_user->attachment)?>">
                 <?php endif;  ?>
                 <p class="col-xs-8">
                     <label class="col-xs-6" for="email">
@@ -37,11 +37,6 @@
                     <input class="col-xs-6" name="date" id="date" type="datetime" value="<?php echo $single_user->date_created;?>" disabled/>
                 </p>
             </section>
-            <div class="col-xs-9">
-                <p class="popover-title container">
-                    Some information
-                </p>
-            </div>
         </div>
     </div>
     <div class="row col-xs-3">
