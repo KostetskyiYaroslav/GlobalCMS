@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - ci3db@ci3.ukrspace.com" uuid="b5c89468-8f12-469c-8a9f-b46ca924f727">
+    <data-source name="MySQL - ci3db@ci3.ukrspace.com" uuid="7738e1b8-bf07-40c3-aeef-d593eb2e6905">
       <secret-storage>master_key</secret-storage>
       <user-name>ci3user</user-name>
+      <schema-pattern>ci3db.*</schema-pattern>
+      <default-schemas>ci3db.*</default-schemas>
     </data-source>
   </component>
 </project>
