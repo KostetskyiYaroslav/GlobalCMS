@@ -52,4 +52,57 @@ class Users extends MY_Controller
 
     }
 
+    public function cabinet()
+    {
+        $data = array();
+        $condition = TRUE;
+        $login = $this->uri->segment(3);
+        $password = $email = $role_id = $date_created = $message = '';
+        $update_user = $this->Model_users->get_by(['login' => $this->data['user']->login], TRUE);
+
+        $this->load->view('components/view_header',
+            [
+                'title' => 'Personal cabinet',
+                'auth' => $this->data['auth'],
+                'user' => $this->data['user']
+            ]
+        );
+
+        if (isset($_POST['update-email'])) {
+            $email = $password = $role_id = $date_created = $id = NULL;
+            $id = $this->input->get_post('update-id');
+            $email = $this->input->get_post('update-email');
+            $password = $this->input->get_post('update-password');
+            $role_id = $this->input->get_post('update-role-id');
+            $date_created = $this->input->get_post('update-date');
+
+            $data =
+                [
+                    'email' => $email,
+                    'password' => $password,
+                    'role_id' => $role_id,
+                    'date_created' => $date_created
+                ];
+
+            $this->Model_users->save($data, $id);
+            $message = 'User successfully updated!';
+        }
+
+        if (!empty($update_user)) {
+
+            $update_user = $update_user[0];
+
+        } else {
+
+            $message = 'User dose not exist!';
+        }
+
+        $this->load->view('user/view_edit',
+            [
+                'cabinet_user' => $update_user,
+                'message' => $message
+            ]
+        );
+    }
+
 }

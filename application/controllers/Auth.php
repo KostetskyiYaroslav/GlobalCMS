@@ -191,12 +191,21 @@ class Auth extends MY_Controller
         }
     }
 
-    public function restore( $login = NULL)
+    public function restore( )
     {
         $this->load->helper('form');
 
-        if( $login != NULL)
+        $this->load->view('components/view_header',
+            [
+                'title' => 'Restore',
+                'auth' => $this->data['auth'],
+                'user' => $this->data['user']
+            ]
+        );
+
+        if( isset($_POST['restore-login']))
         {
+            $login = $this->input->get_post('restore-login');
             $restore_user = $this->Model_users->get_by([ 'login' => $login ], TRUE);
 
             if( !empty($restore_user) )
@@ -205,13 +214,11 @@ class Auth extends MY_Controller
             }
             $this->_send_restore_latter( $restore_user );
 
+            $this->load->view('auth/view_restore', ['message' => "Password changed and sent to your email!"]);
+
         } else {
 
-            echo form_open('/');
-            echo form_input(['type'=>'text', 'name'=>'restore-login', 'id'=>'restore-login']);
-            echo form_input(['type'=>'email', 'name'=>'restore-email', 'id'=>'restore-email']);
-            echo form_input(['type'=>'submit']);
-            echo form_close();
+            $this->load->view('auth/view_restore');
         }
     }
 
@@ -239,6 +246,7 @@ class Auth extends MY_Controller
             'key'   => $key,
             'login' => $login
         ];
+
         $this->Model_confirmation->save($data);
 
         $this->email->mailtype = 'html';
@@ -246,9 +254,7 @@ class Auth extends MY_Controller
         $this->email->to($to);
         $this->email->subject('Confirmation');
         $this->email->message($template->template);
-
         $this->email->send();
-
     }
 
     private function _send_restore_latter($restore_user)

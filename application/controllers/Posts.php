@@ -48,6 +48,7 @@ class Posts extends MY_Controller
 
         } else {
             $single_post    = $this->Model_posts->get_posts($id, TRUE);
+            $single_post->comments    = $this->Model_comments->get_post_comments($single_post->post_id);
 
             $this->load->view('posts/view_single',
                 array
@@ -59,27 +60,4 @@ class Posts extends MY_Controller
         }
     }
 
-    public function save()
-    {
-        $data = array
-        (
-            'title'         => 'TitleInsertTest',
-            'slug'          => 'TitleInseasdasdasdasdasdasdasdasdasdrtTest',
-            'body'          => 'BodyInseasdasdrtTest',
-            'author_id'     => 1,
-            'attachment'    => '',
-            'date'          => date('Y-m-d H:i:s'),
-            'tags'          => 1,
-            'category_id'   => 1
-        );
-
-        $pages = $this->Model_posts->save($data, 3);
-        var_dump($pages);
-    }
-
-    public function delete()
-    {
-        $id = 3;
-        $this->Model_posts->delete($id);
-    }
 }

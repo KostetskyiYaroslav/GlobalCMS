@@ -31,13 +31,13 @@ class Categories extends MY_Controller
             
         } else {
 
-            $category_posts = $this->Model_categories->get_categories_posts($id);
+            $category_posts = $this->Model_categories->get_categories_posts_main($id);
 
-            $this->load->view('categories/view_single',
+            $this->load->view('posts/view_posts',
                 array
                 (
                     'current_user' => $this->data['user'],
-                    'category_posts' => $category_posts,
+                    'posts' => $category_posts,
                     'categories' => $this->data['categories']
                 )
             );
