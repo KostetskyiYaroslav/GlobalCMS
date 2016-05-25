@@ -31,7 +31,7 @@
             <div class="">
                 <p class="popover-title">Categories List</p>
                 <?php foreach ($categories as $category) : ?>
-                <a href="/categories/view/<?php echo $category->id;?>"><?php echo $category->name; ?></a>
+                <a class="row" href="/categories/view/<?php echo $category->id;?>"><?php echo $category->name; ?></a>
             <?php endforeach; ?>
             </div>
             <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds.</p>

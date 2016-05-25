@@ -56,9 +56,8 @@
         <div class="col-xs-12 text-right">
             <input type="submit" class="btn" value="Save Changes" />
         </div>
-
         <?php echo form_close(); ?>
-        <div class="col-xs-9">
+        <div class="col-xs-9 row">
             <p class="popover-title container">
                 <?php echo $message; ?>
             </p>

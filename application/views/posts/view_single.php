@@ -1,7 +1,7 @@
 <div class="container body">
     <div class="row col-xs-9">
         <div class="single-post">
-            <div class="col-xs-12">
+            <div class="row col-xs-12">
                 <h2 class="col-xs-9">
                     <?php echo $single_post->post_title; ?>
                 </h2>
@@ -12,21 +12,41 @@
                     <?php endif;?>
                 </h3>
             </div>
-            <article class="">
+            <article class="row col-xs-12">
                 <?php if($single_post->post_attachment == '') : ?>
                     <img class="col-xs-4 img-thumbnail" src="<?=base_url('assets/uploads/static/default-post.png')?>">
                 <?php else : ?>
                     <img class="col-xs-4 img-thumbnail" src="<?=base_url("assets/uploads/posts/".$single_post->post_attachment)?>">
                 <?php endif;  ?>
-                <p class="col-xs-8">
+                <div class="col-xs-8">
                     <?php echo $single_post->post_body; ?>
-                </p>
+                </div>
             </article>
-            <div class="col-xs-9">
-                <p class="popover-title container">
+            <div class="col-xs-12">
+                <p class="popover-title">
                     Posted by <b><?php echo anchor('users/single/'.$single_post->post_author_name,$single_post->post_author_name);?></b> at <u><?php echo $single_post->post_date; ?></u> in <b><?php echo $single_post->category_name;?></b>
                 </p>
             </div>
+        </div>
+        <div class="single-post-comments">
+            <?php if($single_post->comments != null) : ?>
+                <?php foreach ($single_post->comments as $comment) : ?>
+                    <div class=" col-xs-12 single-post-comment">
+                        <div class="col-xs-3 text-center">
+                            <div class="row">
+                                <?php echo anchor('users/single/'.$comment->user_login, $comment->user_login).' - '.$comment->user_role; ?>
+                            </div>
+                            <div>
+                                <?php echo $comment->comment_date; ?>
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <?php echo $comment->comment_body; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+            <?php endif;?>
         </div>
     </div>
     <section>
