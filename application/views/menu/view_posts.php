@@ -19,11 +19,10 @@
                 <tbody>
                 <?php foreach ($posts as $post) :?>
                     <tr>
-                        <?php $post->post_body = substr($post->post_body,0,36); ?>
                         <?php if($post->post_author_id == $current_user->id) : ?>
                             <th class="success"><?php echo $post->post_id; ?></th>
                             <th class="success"><?php echo anchor('admin/post_single/'.$post->post_id,$post->post_title); ?></th>
-                            <th class="success"><?php echo $post->post_body; ?></th>
+                            <th class="success"><?php echo $post->post_body = substr($post->post_body, 0, 100 ); ?></th>
                             <th class="success"><?php echo $post->post_author_name; ?></th>
                             <th class="success"><?php echo $post->post_attachment; ?></th>
                             <th class="success"><?php echo $post->post_date; ?></th>
@@ -37,7 +36,7 @@
                         <?php else: ?>
                             <th><?php echo $post->post_id; ?></th>
                             <th><?php echo anchor('admin/post_single/'.$post->post_id,$post->post_title); ?></th>
-                            <th><?php echo $post->post_body; ?></th>
+                            <th><div><?php echo $post->post_body = substr($post->post_body, 0, 100 ); ?></div></th>
                             <th><?php echo $post->post_author_name; ?></th>
                             <th><?php echo $post->post_attachment; ?></th>
                             <th><?php echo $post->post_date; ?></th>
