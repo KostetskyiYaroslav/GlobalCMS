@@ -14,20 +14,6 @@ class Model_users extends MY_Model
         parent::__construct();
     }
 
-    public function get_role_name($where)
-    {
-        $this->db->select('roles.name');
-        $this->db->from('users');
-        $this->db->where($where);
-        $this->db->order_by($this->order_by);
-
-        $this->db->join('roles', 'roles.id = users.role_id');
-
-        $query = $this->db->get();
-
-        return $query->row();
-    }
-
     public function get_role($where)
     {
         $this->db->select('roles.*');
