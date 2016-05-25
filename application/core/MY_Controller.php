@@ -15,6 +15,7 @@ class MY_Controller extends CI_Controller
         $this->load->model('Model_posts');
         $this->load->model('Model_categories');
         $this->load->model('Model_templates');
+        $this->load->model('Model_comments');
 
         $this->data['site_name']    = config_item('site_name');
         $this->data['error']        = array();
@@ -39,7 +40,14 @@ class MY_Controller extends CI_Controller
         
         $this->data['users'] = $this->Model_users->get_users();
         $this->data['posts'] = $this->Model_posts->get_posts();
-        $this->data['categories'] = $this->Model_categories->get();
+        $this->data['comments']     = $this->Model_comments->get_post_comments();
+        $this->data['templates']    = $this->Model_templates->get();
+        $this->data['categories']   = $this->Model_categories->get();
+
+        foreach( $this->data['posts'] as $post )
+        {
+            $post->comments = $this->Model_comments->get_post_comments($post->post_id);
+        }
 
         function cmp($a, $b)
         {
