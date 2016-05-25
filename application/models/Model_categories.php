@@ -34,4 +34,37 @@ class Model_categories extends MY_Model
         return $query->$method();
     }
 
+    public function get_categories_posts_main($id = NULL, $single = FALSE)
+    {
+        $method = null;
+
+        if($id != NULL)
+        {
+            $this->db->where('c.'.$this->primary_key, $id);
+        }
+
+        $this->db->select(
+            '`p`.`id`  AS post_id
+           , `p`.`title` AS post_title
+           , `p`.`body` AS post_body
+           , `p`.`author_id` AS post_author_id
+           , `u`.`login` AS post_author_name
+           , `p`.`attachment` AS post_attachment
+           , `p`.`date` AS post_date
+           , `p`.`tags` AS post_tags
+           , `p`.`slug` AS post_slug
+           , `p`.`category_id` AS category_id
+           , `c`.`name` AS category_name'
+        );
+        $this->db->from('posts AS p');
+        $this->db->join('users AS u'        , 'p.author_id = u.id'  );
+        $this->db->join('categories AS c'   , 'c.id = p.category_id');
+
+        $query = $this->db->get();
+
+        $method =  ( $single  == TRUE) ? 'row' : 'result';
+
+        return $query->$method();
+    }
+
 }
