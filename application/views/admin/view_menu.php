@@ -4,6 +4,7 @@
         <li><?php echo anchor('admin/dashboard/users','Users Menu'); ?></li>
         <li><?php echo anchor('admin/dashboard/posts','Posts Menu'); ?></li>
         <li><?php echo anchor('admin/dashboard/pages','Pages Menu'); ?></li>
+        <li><?php echo anchor('admin/dashboard/categories','Categories Menu'); ?></li>
         <li><?php echo anchor('admin/dashboard/templates','Templates Menu'); ?></li>
         <li role="separator" class="divider"></li>
         <li><a href="#">Client Menu</a></li>
