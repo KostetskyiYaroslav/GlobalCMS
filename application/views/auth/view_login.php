@@ -33,6 +33,9 @@
         <div class="row container form-group">
             <div class="col-xs-offset-2 col-xs-6">
                 <button type="submit" class="btn btn-default">Log In</button>
+                <?php if( isset( $error ) ) { ?>
+                    <a type="information" href="/auth/restore" class="alert-info">Forgot password?</a>
+                <?php } ?>
             </div>
         </div>
         <?=form_close()?>
