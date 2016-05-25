@@ -18,6 +18,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <?php if(isset($user) && $user->role_id > 4): ?>
+        <!-- My User Style -->
+        <link href="<?=base_url().'assets/css/user-style.css'?>" rel="stylesheet">
+    <?php elseif ( isset($user) && $user->role_id < 4 ): ?>
+        <link href="<?=base_url().'assets/css/admin-style.css'?>" rel="stylesheet">
+    <?php endif;?>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -52,11 +58,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, <?=$user->login?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <?php if( $user->role->access_lvl > 5) { ?>
-                                <li><a href="#"><?=$user->role->name?> Menu</a></li>
-                            <?php } ?>
+                            <li><a href="/users/cabinet">Setting</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="<?=base_url('index.php/auth/logout')?>">Log Out</a></li>
                         </ul>
