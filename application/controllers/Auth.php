@@ -3,10 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends MY_Controller
 {
-
+    private $domain = NULL;
     public function __construct()
     {
         parent::__construct();
+        $this->domain = $this->Model_settings->get_by(['name' => 'domain'], true)[0]->value;
     }
 
     public function sign_up()
@@ -105,12 +106,12 @@ class Auth extends MY_Controller
 
             if ( !empty($user) && $user[0]->password == $password ) {
 
-                $this->input->set_cookie('login', $login, 804604, config_item('domain'), '/', 'CMS_');
+                $this->input->set_cookie('login', $login, 804604, $this->domain, '/', 'CMS_');
 
                 if($remember == 'on')
-                    $this->input->set_cookie('remember', 'Yes', 804604, config_item('domain'), '/', 'CMS_');
+                    $this->input->set_cookie('remember', 'Yes', 804604, $this->domain, '/', 'CMS_');
                 else
-                    $this->input->set_cookie('remember', 'No', 804604, config_item('domain'), '/', 'CMS_');
+                    $this->input->set_cookie('remember', 'No', 804604, $this->domain, '/', 'CMS_');
 
                 redirect('main');
 
@@ -136,8 +137,8 @@ class Auth extends MY_Controller
 
         if ( isset( $_COOKIE['CMS_login'] ) )
         {
-            delete_cookie('login', config_item('domain'), '/', 'CMS_');
-            delete_cookie('remember', config_item('domain'), '/', 'CMS_');
+            delete_cookie('login', $this->domain, '/', 'CMS_');
+            delete_cookie('remember', $this->domain, '/', 'CMS_');
 
             redirect('main');
 

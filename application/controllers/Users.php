@@ -99,7 +99,7 @@ class Users extends MY_Controller
 
         $this->load->view('user/view_edit',
             [
-                'cabinet_user' => $update_user,
+                'update_user' => $update_user,
                 'message' => $message
             ]
         );

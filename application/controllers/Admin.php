@@ -8,7 +8,7 @@ class Admin extends MY_Controller
         parent::__construct();
         $this->load->helper(['url', 'form']);
         if ($this->data['auth'] == FALSE || $this->data['user']->role->access_lvl <= 5) {
-            redirect(base_url());
+            redirect('/');
         }
     }
 
@@ -19,7 +19,7 @@ class Admin extends MY_Controller
 
     public function dashboard($menu)
     {
-        $this->load->view('components/view_header',
+       $this->load->view('components/view_header',
             [
                 'title' => $menu . ' Menu',
                 'auth' => $this->data['auth'],
@@ -49,6 +49,10 @@ class Admin extends MY_Controller
 
             case 'templates':
                 $this->load->view('menu/view_' . $menu, ['templates' => $this->data['templates'], 'current_user' => $this->data['user']]);
+                break;
+
+            case 'settings':
+                $this->load->view('menu/view_' . $menu, ['settings' => $this->data['settings'], 'current_user' => $this->data['user']]);
                 break;
 
             default:
@@ -816,6 +820,72 @@ class Admin extends MY_Controller
         $this->load->view('user/view_edit',
             [
                 'update_user' => $update_user,
+                'message' => $message
+            ]
+        );
+
+    }
+
+    #endregion
+
+    #region Settings Manipulation
+
+    public function settings_single($id)
+    {
+        $single_settings = $this->Model_settings->get($id, true);
+
+        $this->load->view('components/view_header',
+            [
+                'title' => 'Single Settings',
+                'auth' => $this->data['auth'],
+                'user' => $this->data['user']
+            ]
+        );
+
+        $this->load->view('settings/view_single',
+            array
+            (
+                'current_user' => $this->data['user'],
+                'single_settings' => $single_settings,
+            )
+        );
+    }
+
+    public function settings_edit()
+    {
+        $data = array();
+        $id = $this->uri->segment(3);
+        $update_settings = $this->Model_settings->get($id, TRUE);
+        $message = null;
+        $this->load->view('components/view_header',
+            [
+                'title' => 'Settings Edit',
+                'auth' => $this->data['auth'],
+                'user' => $this->data['user']
+            ]
+        );
+
+        if (isset($_POST['update-value'])) {
+            $id = NULL;
+            $id = $this->input->get_post('update-id');
+            $value = $this->input->get_post('update-value');
+
+            $data =
+                [
+                    'value' => $value
+                ];
+
+            $this->Model_settings->save($data, $id);
+            $message = 'Settings successfully updated!';
+        }
+
+        if ( empty($update_settings) ) {
+            $message = 'Settings dose not exist!';
+        }
+
+        $this->load->view('settings/view_edit',
+            [
+                'update_settings' => $update_settings,
                 'message' => $message
             ]
         );

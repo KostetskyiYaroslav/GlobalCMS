@@ -47,7 +47,8 @@ class Posts extends MY_Controller
             );
 
         } else {
-            $single_post    = $this->Model_posts->get_posts($id, TRUE);
+
+            $single_post = $this->Model_posts->get_posts($id, TRUE);
             $single_post->comments    = $this->Model_comments->get_post_comments($single_post->post_id);
 
             $this->load->view('posts/view_single',
