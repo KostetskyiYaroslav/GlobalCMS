@@ -19,3 +19,8 @@ body
 {
     border: 1px dotted gray;
 }
+
+.min-width-clearfix
+{
+    min-width: 1170px
+}
