@@ -1,31 +1,29 @@
-<div class="container body ">
+<div class="container body min-width-clearfix">
     <div class="row col-xs-12">
         <div class="users">
             <table class="table table-bordered">
-
                 <thead>
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>TEMPLATE</th>
+                    <th>Value</th>
                     <th class="danger">Operation</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($templates as $template) :?>
+                <?php foreach ($settings as $setting) :?>
                     <tr>
-                        <th><?php echo $template->id; ?></th>
-                        <th><?php echo anchor('admin/templates_single/'.$template->id, $template->name); ?></th>
-                        <th><?php echo $template->template; ?></th>
+                        <th><?=$setting->id?></th>
+                        <th><?=anchor('admin/settings_single/'.$setting->id, $setting->name); ?></th>
+                        <th><?=$setting->value?></th>
                         <th>
-                            <?php echo anchor('admin/templates_delete/'.$template->id, '<i class="col-xs-6 glyphicon glyphicon-remove"></i>'); ?>
-                            <?php echo anchor('admin/templates_edit/'.$template->id, '<i class="col-xs-6 glyphicon glyphicon-edit""></i>'); ?>
+                            <?= anchor('admin/settings_edit/'.$setting->id, '<i class="col-xs-6 glyphicon glyphicon-edit""></i>'); ?>
                         </th>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
-            <a href="/admin/templates_save">New Templates</a>
+            <a href="/admin/settings_save">New Settings</a>
         </div>
     </div>
 </div>

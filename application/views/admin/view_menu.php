@@ -7,6 +7,6 @@
         <li><?php echo anchor('admin/dashboard/categories','Categories Menu'); ?></li>
         <li><?php echo anchor('admin/dashboard/templates','Templates Menu'); ?></li>
         <li role="separator" class="divider"></li>
-        <li><a href="#">Client Menu</a></li>
+        <li><?php echo anchor('analytics/','Analytics'); ?></li>
     </ul>
 </li>

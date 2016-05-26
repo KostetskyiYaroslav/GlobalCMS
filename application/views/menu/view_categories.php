@@ -1,4 +1,4 @@
-<div class="container body">
+<div class="container body ">
     <div class="row col-xs-12">
         <div class="users">
             <table class="table table-bordered">

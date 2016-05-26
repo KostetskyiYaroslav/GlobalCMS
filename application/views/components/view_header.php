@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title><?=config_item('site_name').' | '.$title?></title>
+    <title><?=$this->site_name.' | '.$title?></title>
     <!-- Bootstrap -->
     <link href="<?=base_url().'assets/css/bootstrap.min.css'?>" rel="stylesheet">
     <!-- My Style -->
@@ -19,7 +19,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <?php if(isset($user) && $user->role_id > 4): ?>
-        <!-- My User Style -->
         <link href="<?=base_url().'assets/css/user-style.css'?>" rel="stylesheet">
     <?php elseif ( isset($user) && $user->role_id < 4 ): ?>
         <link href="<?=base_url().'assets/css/admin-style.css'?>" rel="stylesheet">
@@ -41,8 +40,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+                <li><a href="#">Pages</a></li>
                 <?php if (isset($user)):?>
                     <?php $this->load->view(strtolower($user->role->name).'/view_menu'); ?>
                 <?php endif;?>
@@ -58,6 +56,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, <?=$user->login?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <?php if($user->role->access_lvl == 10): ?>
+                                <li><?php echo anchor('admin/dashboard/settings','Core Settings'); ?></li>
+                            <?php endif;?>
                             <li><a href="/users/cabinet">Setting</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="<?=base_url('index.php/auth/logout')?>">Log Out</a></li>

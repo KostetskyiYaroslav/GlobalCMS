@@ -7,8 +7,10 @@
                 </h2>
                 <h3 class="col-xs-6 text-right">
                     <a href="" title="Come back" class="glyphicon glyphicon-step-backward" onclick="window.history.back();"></a>
-                    <?php if($current_user->role->access_lvl> 5) : ?>
-                        <a href="/admin/user_edit/<?php echo $single_user->login;?>" title="Edit user" class="glyphicon glyphicon-edit" ></a>
+                    <?php if (isset($current_user)) :?>
+                        <?php if($current_user->role->access_lvl> 5) : ?>
+                            <a href="/admin/user_edit/<?php echo $single_user->login;?>" title="Edit user" class="glyphicon glyphicon-edit" ></a>
+                        <?php endif;?>
                     <?php endif;?>
                 </h3>
             </div>
