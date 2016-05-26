@@ -3,7 +3,7 @@ class MY_Controller extends CI_Controller
 {
 
     public $data = array();
-
+    public $site_name = null;
     /**
      * MY_Controller constructor.
      */
@@ -16,6 +16,7 @@ class MY_Controller extends CI_Controller
         $this->load->model('Model_categories');
         $this->load->model('Model_templates');
         $this->load->model('Model_comments');
+        $this->load->model('Model_settings');
 
         $this->data['site_name']    = config_item('site_name');
         $this->data['error']        = array();
@@ -28,7 +29,7 @@ class MY_Controller extends CI_Controller
         $this->data['categories']   = NULL;
         $this->data['sidebar']      = NULL;
         $this->data['templates']    = NULL;
-
+        $this->data['settings']     = NULL;
         if( isset($_COOKIE['CMS_login']) )
         {
             $login = $this->input->cookie('CMS_login');
@@ -43,6 +44,7 @@ class MY_Controller extends CI_Controller
         $this->data['comments']     = $this->Model_comments->get_post_comments();
         $this->data['templates']    = $this->Model_templates->get();
         $this->data['categories']   = $this->Model_categories->get();
+        $this->data['settings']     = $this->Model_settings->get();
 
         foreach( $this->data['posts'] as $post )
         {
@@ -59,5 +61,8 @@ class MY_Controller extends CI_Controller
         }
 
         usort($this->data['posts'], "cmp");
+
+        $this->site_name = $this->Model_settings->get_by(['name' => 'site_name'],true)[0]->value;
     }
+
 }

@@ -98,4 +98,14 @@ class MY_Model extends CI_Model
         return TRUE;
     }
 
+    public function get_analytics($table)
+    {
+        $analytics = [];
+
+        $analytics['name'] = $table;
+        $analytics['count'] = $this->db->count_all($table);
+
+        return $analytics;
+    }
+
 }
