@@ -1,7 +1,7 @@
 <div class="container body">
-    <div class="row col-xs-9">
-        <div class="col-xs-12">
-            <h2 class="col-xs-6">
+    <div class="col-xs-9">
+        <div class=" col-xs-12">
+            <h2 class=" col-xs-6">
                 <?php echo $cabinet_user->login; ?>
             </h2>
             <h3 class="col-xs-6 text-right">
@@ -52,10 +52,4 @@
             <p>Some information</p>
         </div>
     </div>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?=base_url().'assets/js/bootstrap.min.js'?>"></script>
-</body>
-</html>
+<?php $this->load->view('components/view_footer'); ?>

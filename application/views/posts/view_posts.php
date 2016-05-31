@@ -27,20 +27,6 @@
         </div>
     </div>
     <div class="row col-xs-3">
-        <div class="sidebar">
-            <div class="">
-                <p class="popover-title">Categories List</p>
-                <?php foreach ($categories as $category) : ?>
-                <a class="row" href="/categories/view/<?php echo $category->id;?>"><?php echo $category->name; ?></a>
-            <?php endforeach; ?>
-            </div>
-            <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds.</p>
-        </div>
+        <?php $this->load->view('components/view_sidebar', ['categories' => $categories]);?>
     </div>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?=base_url().'assets/js/bootstrap.min.js'?>"></script>
-</body>
-</html>
+<?php $this->load->view('components/view_footer'); ?>
