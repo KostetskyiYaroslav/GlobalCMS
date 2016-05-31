@@ -17,6 +17,7 @@ class MY_Controller extends CI_Controller
         $this->load->model('Model_templates');
         $this->load->model('Model_comments');
         $this->load->model('Model_settings');
+        $this->load->model('Model_widgets');
 
         $this->data['site_name']    = config_item('site_name');
         $this->data['error']        = array();
@@ -30,6 +31,8 @@ class MY_Controller extends CI_Controller
         $this->data['sidebar']      = NULL;
         $this->data['templates']    = NULL;
         $this->data['settings']     = NULL;
+        $this->data['widgets']      = NULL;
+
         if( isset($_COOKIE['CMS_login']) )
         {
             $login = $this->input->cookie('CMS_login');
@@ -45,6 +48,16 @@ class MY_Controller extends CI_Controller
         $this->data['templates']    = $this->Model_templates->get();
         $this->data['categories']   = $this->Model_categories->get();
         $this->data['settings']     = $this->Model_settings->get();
+        $this->data['widgets']      = $this->Model_widgets->get();
+
+        $i = 0;
+        foreach ($this->data['widgets'] as $widget)
+        {
+            $this->data['widgets'][$widget->position] = $widget;
+            unset($this->data['widgets'][$i]);
+            $i++;
+        }
+        unset($i);
 
         foreach( $this->data['posts'] as $post )
         {
@@ -59,7 +72,6 @@ class MY_Controller extends CI_Controller
 
             return ($a->post_date < $b->post_date) ? 1 : -1;
         }
-
         usort($this->data['posts'], "cmp");
 
         $this->site_name = $this->Model_settings->get_by(['name' => 'site_name'],true)[0]->value;
