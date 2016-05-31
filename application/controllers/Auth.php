@@ -31,7 +31,9 @@ class Auth extends MY_Controller
             [
                 'title' => 'Sign Up',
                 'auth' => $this->data['auth'],
-                'user' => $this->data['user']
+                'user' => $this->data['user'],
+                'widgets' => $this->data['widgets']
+
             ]
         );
         #endregion
@@ -57,20 +59,25 @@ class Auth extends MY_Controller
 
             } elseif ( $this->form_validation->run() == FALSE ) {
 
-                $this->load->view('auth/view_sing_up');
+                $this->load->view('auth/view_sing_up',[
+                    'widgets' => $this->data['widgets']
+                ]);
 
             } else {
 
                 $this->load->view('auth/view_sing_up',
                     [
-                        'error' => 'User already exist!'
+                        'error' => 'User already exist!',
+                        'widgets' => $this->data['widgets']
+
                     ]
                 );
             }
 
         } else {
 
-            $this->load->view('auth/view_sing_up');
+            $this->load->view('auth/view_sing_up',['widgets' => $this->data['widgets']
+            ]);
         }
 
     }
@@ -85,7 +92,9 @@ class Auth extends MY_Controller
             [
                 'title' => 'Log In',
                 'auth' => $this->data['auth'],
-                'user' => $this->data['user']
+                'user' => $this->data['user'],
+                'widgets' => $this->data['widgets']
+
             ]
         );
 
@@ -119,14 +128,17 @@ class Auth extends MY_Controller
 
                 $this->load->view('auth/view_login',
                     [
-                        'error' => 'Login / Password is not correct!'
+                        'error' => 'Login / Password is not correct!',
+                        'widgets' => $this->data['widgets']
+
                     ]
                 );
             }
 
         } else {
 
-            $this->load->view('auth/view_login');
+            $this->load->view('auth/view_login',['widgets' => $this->data['widgets']
+            ]);
         }
 
     }
@@ -177,12 +189,16 @@ class Auth extends MY_Controller
                     [
                         'title' => 'Okay :)',
                         'auth'  => $this->data['auth'],
-                        'user'  => $this->data['user']
+                        'user'  => $this->data['user'],
+                        'widgets' => $this->data['widgets']
+
                     ]
                 );
                 $this->load->view('auth/view_confirmation_success',
                     [
-                        'message' =>  $this->data['message']
+                        'message' =>  $this->data['message'],
+                        'widgets' => $this->data['widgets']
+
                     ]
                 );
             }
@@ -200,7 +216,9 @@ class Auth extends MY_Controller
             [
                 'title' => 'Restore',
                 'auth' => $this->data['auth'],
-                'user' => $this->data['user']
+                'user' => $this->data['user'],
+                'widgets' => $this->data['widgets']
+
             ]
         );
 
@@ -215,11 +233,17 @@ class Auth extends MY_Controller
             }
             $this->_send_restore_latter( $restore_user );
 
-            $this->load->view('auth/view_restore', ['message' => "Password changed and sent to your email!"]);
+            $this->load->view('auth/view_restore',
+                [
+                    'message' => "Password changed and sent to your email!",
+                    'widgets' => $this->data['widgets'
+                ]
+            ]);
 
         } else {
 
-            $this->load->view('auth/view_restore');
+            $this->load->view('auth/view_restore',['widgets' => $this->data['widgets']
+            ]);
         }
     }
 

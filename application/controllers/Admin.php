@@ -669,10 +669,6 @@ class Admin extends MY_Controller
     {
         $category_posts = $this->Model_posts->get_post_by(['category_id'=>$id]);
 
-        if (isset($_POST['edit'])) {
-            $edit_field = '';
-        }
-
         $this->load->view('components/view_header',
             [
                 'title' => 'Single Category',

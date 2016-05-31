@@ -17,7 +17,8 @@ class Main extends MY_Controller
             [
                 'title' => 'Welcome',
                 'auth'  => $this->data['auth'],
-                'user'  => $this->data['user']
+                'user'  => $this->data['user'],
+                'widgets' => $this->data['widgets']
             ]
         );
 
@@ -27,6 +28,7 @@ class Main extends MY_Controller
                 'posts' => $this->data['posts'],
                 'sidebar' => $this->data['sidebar'],
                 'categories' => $this->data['categories'],
+                'widgets' => $this->data['widgets']
             )
         );
     }

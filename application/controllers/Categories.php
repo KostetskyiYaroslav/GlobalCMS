@@ -16,7 +16,9 @@ class Categories extends MY_Controller
             [
                 'title' => 'Category',
                 'auth'  => $this->data['auth'],
-                'user'  => $this->data['user']
+                'user'  => $this->data['user'],
+                'widgets' => $this->data['widgets']
+
             ]
         );
 
@@ -25,7 +27,8 @@ class Categories extends MY_Controller
             $this->load->view( 'categories/view_categories',
                 array
                 (
-                    'categories' => $this->data['categories']
+                    'categories' => $this->data['categories'],
+                    'widgets' => $this->data['widgets']
                 )
             );
             
@@ -38,7 +41,8 @@ class Categories extends MY_Controller
                 (
                     'current_user' => $this->data['user'],
                     'posts' => $category_posts,
-                    'categories' => $this->data['categories']
+                    'categories' => $this->data['categories'],
+                    'widgets' => $this->data['widgets']
                 )
             );
         }

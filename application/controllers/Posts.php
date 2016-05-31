@@ -14,13 +14,15 @@ class Posts extends MY_Controller
             [
                 'title' => 'Posts',
                 'auth'  => $this->data['auth'],
-                'user'  => $this->data['user']
+                'user'  => $this->data['user'],
+                'widgets' => $this->data['widgets']
             ]
         );
         $this->load->view( 'posts/view_posts',
             array
             (
-                'posts' => $this->data['posts']
+                'posts' => $this->data['posts'],
+                'widgets' => $this->data['widgets']
             )
         );
     }
@@ -33,7 +35,8 @@ class Posts extends MY_Controller
             [
                 'title' => 'Welcome',
                 'auth'  => $this->data['auth'],
-                'user'  => $this->data['user']
+                'user'  => $this->data['user'],
+                'widgets' => $this->data['widgets']
             ]
         );
 
@@ -42,7 +45,8 @@ class Posts extends MY_Controller
             $this->load->view( 'view_main',
                 array
                 (
-                    'posts' => $this->data['posts']
+                    'posts' => $this->data['posts'],
+                    'widgets' => $this->data['widgets']
                 )
             );
 
@@ -55,7 +59,8 @@ class Posts extends MY_Controller
                 array
                 (
                     'current_user'  => $this->data['user'],
-                    'single_post'  => $single_post
+                    'single_post'  => $single_post,
+                    'widgets' => $this->data['widgets']
                 )
             );
         }
