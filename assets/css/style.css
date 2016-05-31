@@ -1,6 +1,7 @@
 body
 {
     background: url("http://ci3.ukrspace.com/assets/uploads/static/rp_bg_body.gif") repeat;
+    min-height: 100%;
 }
 
 .body
