@@ -1,3 +1,4 @@
+#region Create
 CREATE TABLE ci3db.roles
 (
   id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -19,7 +20,7 @@ CREATE TABLE ci3db.categories
   id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NOT NULL,
   tags VARCHAR(100),
-  role_id INT(11) DEFAULT '6'
+  role_id INT(11) DEFAULT 6
 );
 
 CREATE TABLE ci3db.posts
@@ -31,31 +32,51 @@ CREATE TABLE ci3db.posts
   atachment VARCHAR(100),
   date DATETIME NOT NULL,
   tags VARCHAR(255),
-  categorie_id INT(11) DEFAULT '1'
+  categorie_id INT(11) DEFAULT 1
+);
+
+CREATE TABLE `ci3db`.`comments`
+(
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `body` VARCHAR(255) NOT NULL,
+  `date` DATETIME not NULL ,
+  `author_id` INT NOT NULL REFERENCES `ci3db`.`users`(id),
+  `post_id`   INT NOT NULL REFERENCES `ci3db`.`posts`(id)
 );
 
 CREATE TABLE ci3db.templates
 (
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    template TEXT NOT NULL
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `template` TEXT NOT NULL
 );
 
-CREATE TABLE ci3db.confirmation
+CREATE TABLE `ci3db`.`widgets`
 (
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `key` VARCHAR(255) NOT NULL,
-    login VARCHAR(100)
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `body` TEXT NOT NULL ,
+  `style` VARCHAR(255) NOT NULL ,
+  `position`INT NOT NULL ,
+  `options` NVARCHAR(255) NULL
 );
 
-CREATE TABLE ci3db.comments
+#endregion
+
+/* Pages Not active
+CREATE TABLE `ci3db`.`pages`
 (
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    body VARCHAR(255) NOT NULL,
-    date DATETIME NOT NULL,
-    author_id INT(11) NOT NULL,
-    post_id INT(11) NOT NULL
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`name`        VARCHAR(100) NOT NULL,
+`body`        TEXT NOT NULL,
+`attachment`  VARCHAR(100) NOT NULL,
+`date`        VARCHAR(100) NOT NULL,
+`author_id`   VARCHAR(100) NOT NULL,
+`role_id`     VARCHAR(100) NOT NULL DEFAULT 6
 );
+*/
+
+#region Insert
 
 INSERT INTO `ci3db`.`roles`
 ( `id`, `name`, `access_lvl` )
@@ -92,3 +113,16 @@ VALUES
     , 'We very happy to see you here! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum'
     , 1 , '' , NOW(), '', 1
   );
+
+#endregion
+
+#region Trigger
+
+CREATE TRIGGER `lost_relation_category` AFTER DELETE ON `categories`
+FOR EACH ROW BEGIN
+  DELETE FROM `posts` WHERE `category_id` = `old`.`id`;
+END;
+
+show TABLES ;
+#endregion
+
