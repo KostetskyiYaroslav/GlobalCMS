@@ -2,54 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f7aebe0-bfcc-4f4d-909b-57687a5fcba8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/Settings.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Model_widgets.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/settings/widgets/current_time/widget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/settings/widgets/view_footer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/settings/widgets/view_locations.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/settings/widgets/view_sidebar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/interact.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/widgets/locations.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Auth.php" afterPath="$PROJECT_DIR$/application/controllers/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Categories.php" afterPath="$PROJECT_DIR$/application/controllers/Categories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Main.php" afterPath="$PROJECT_DIR$/application/controllers/Main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Posts.php" afterPath="$PROJECT_DIR$/application/controllers/Posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Users.php" afterPath="$PROJECT_DIR$/application/controllers/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/MY_Controller.php" afterPath="$PROJECT_DIR$/application/core/MY_Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/analytics/view_analytics.php" afterPath="$PROJECT_DIR$/application/views/analytics/view_analytics.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/auth/view_confirmation_success.php" afterPath="$PROJECT_DIR$/application/views/auth/view_confirmation_success.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/auth/view_login.php" afterPath="$PROJECT_DIR$/application/views/auth/view_login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/auth/view_restore.php" afterPath="$PROJECT_DIR$/application/views/auth/view_restore.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/auth/view_sing_up.php" afterPath="$PROJECT_DIR$/application/views/auth/view_sing_up.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/auth/view_success_reg.php" afterPath="$PROJECT_DIR$/application/views/auth/view_success_reg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/categories/view_single.php" afterPath="$PROJECT_DIR$/application/views/categories/view_single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/components/view_header.php" afterPath="$PROJECT_DIR$/application/views/components/view_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_categories.php" afterPath="$PROJECT_DIR$/application/views/menu/view_categories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_pages.php" afterPath="$PROJECT_DIR$/application/views/menu/view_pages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_posts.php" afterPath="$PROJECT_DIR$/application/views/menu/view_posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_settings.php" afterPath="$PROJECT_DIR$/application/views/menu/view_settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_templates.php" afterPath="$PROJECT_DIR$/application/views/menu/view_templates.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menu/view_users.php" afterPath="$PROJECT_DIR$/application/views/menu/view_users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/posts/view_edit.php" afterPath="$PROJECT_DIR$/application/views/posts/view_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/posts/view_posts.php" afterPath="$PROJECT_DIR$/application/views/posts/view_posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/posts/view_save.php" afterPath="$PROJECT_DIR$/application/views/posts/view_save.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/posts/view_single.php" afterPath="$PROJECT_DIR$/application/views/posts/view_single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/settings/view_edit.php" afterPath="$PROJECT_DIR$/application/views/settings/view_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/settings/view_single.php" afterPath="$PROJECT_DIR$/application/views/settings/view_single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/view_edit.php" afterPath="$PROJECT_DIR$/application/views/templates/view_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/view_single.php" afterPath="$PROJECT_DIR$/application/views/templates/view_single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/view_templates.php" afterPath="$PROJECT_DIR$/application/views/templates/view_templates.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/view_cabinet.php" afterPath="$PROJECT_DIR$/application/views/user/view_cabinet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/view_edit.php" afterPath="$PROJECT_DIR$/application/views/user/view_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/view_new.php" afterPath="$PROJECT_DIR$/application/views/user/view_new.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/view_single.php" afterPath="$PROJECT_DIR$/application/views/user/view_single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/view_main.php" afterPath="$PROJECT_DIR$/application/views/view_main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ci3db.sql" afterPath="$PROJECT_DIR$/ci3db.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/command.sql" afterPath="$PROJECT_DIR$/command.sql" />
     </list>
     <ignored path="Ukraspace CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,20 +26,6 @@
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - ci3db@ci3.ukrspace.com" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="widgets" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
     <PATH>
       <PATH_ELEMENT>
         <option name="myItemId" />
@@ -117,7 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/auth/view_login.php" />
         <option value="$PROJECT_DIR$/application/views/auth/view_restore.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b5c89468-8f12-469c-8a9f-b46ca924f727/console.sql" />
         <option value="$PROJECT_DIR$/application/views/settings/view_settings.php" />
@@ -168,6 +108,7 @@
         <option value="$PROJECT_DIR$/application/views/settings/widgets/view_locations.php" />
         <option value="$PROJECT_DIR$/application/views/settings/widgets/view_sidebar.php" />
         <option value="$PROJECT_DIR$/application/views/components/view_sidebar.php" />
+        <option value="$PROJECT_DIR$/command.sql" />
       </list>
     </option>
   </component>
@@ -513,38 +454,38 @@
       <workItem from="1464588593809" duration="4228000" />
       <workItem from="1464634309343" duration="3654000" />
       <workItem from="1464676687017" duration="3805000" />
-      <workItem from="1464682985783" duration="9506000" />
+      <workItem from="1464682985783" duration="10260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206517000" />
+    <option name="totallyTimeSpent" value="207271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2062982" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33997345" sideWeight="0.51028275" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19858612" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35856575" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22974768" sideWeight="0.4974227" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2062982" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19858612" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35856575" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1412" height="712" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28552458" sideWeight="0.48971722" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -565,13 +506,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/analytics/view_analytics.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/75dcbd06/7738e1b8-bf07-40c3-aeef-d593eb2e6905/ci3db.confirmation">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -786,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7738e1b8-bf07-40c3-aeef-d593eb2e6905/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Model_confirmation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -944,6 +871,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7738e1b8-bf07-40c3-aeef-d593eb2e6905/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="125" column="13" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/command.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
           <folding />
         </state>
       </provider>
