@@ -1,0 +1,58 @@
+.widget-location
+{
+    border: 1px dotted gray;
+    background-color: yellow;
+    min-height: 50px;
+}
+
+.widgets-item
+{
+    margin: 5px;
+}
+
+#outer-dropzone {
+    height: 140px;
+}
+
+#inner-dropzone {
+    height: 80px;
+}
+
+.dropzone {
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border: 1px dotted gray;
+    background-color: yellow;
+    //min-height: 50px;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #29e;
+    border-color: #fff;
+    border-style: solid;
+    z-index: -1;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    background-color: #29e;
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+
+    transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+    color: #000;
+    background-color: #4e4;
+}
