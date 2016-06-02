@@ -18,8 +18,9 @@ class MY_Controller extends CI_Controller
         $this->load->model('Model_comments');
         $this->load->model('Model_settings');
         $this->load->model('Model_widgets');
+        $this->load->model('Model_themes');
 
-        $this->data['site_name']    = config_item('site_name');
+        //$this->data['site_name']    = config_item('site_name');
         $this->data['error']        = array();
         $this->data['auth']         = FALSE;
         $this->data['posts']        = NULL;
@@ -32,6 +33,7 @@ class MY_Controller extends CI_Controller
         $this->data['templates']    = NULL;
         $this->data['settings']     = NULL;
         $this->data['widgets']      = NULL;
+        $this->data['themes']       = NULL;
 
         if( isset($_COOKIE['CMS_login']) )
         {
@@ -41,7 +43,7 @@ class MY_Controller extends CI_Controller
             $this->data['user']->role   = $this->Model_users->get_role( ['login' => $login ] );
             $this->data['auth']         = TRUE;
         }
-        
+
         $this->data['users'] = $this->Model_users->get_users();
         $this->data['posts'] = $this->Model_posts->get_posts();
         $this->data['comments']     = $this->Model_comments->get_post_comments();
@@ -49,11 +51,19 @@ class MY_Controller extends CI_Controller
         $this->data['categories']   = $this->Model_categories->get();
         $this->data['settings']     = $this->Model_settings->get();
         $this->data['widgets']      = $this->Model_widgets->get();
+        $this->data['themes']       = $this->Model_themes->get();
+
+        function sort_widget($a, $b) {
+            if($a->priority == $b->priority){ return 0 ; }
+            return ($a->priority < $b->priority) ? 1 : -1;
+        }
+
+        usort($this->data['widgets'], "sort_widget");
 
         $i = 0;
         foreach ($this->data['widgets'] as $widget)
         {
-            $this->data['widgets'][$widget->position] = $widget;
+            $this->data['widgets'][$widget->position][$i] = $widget;
             unset($this->data['widgets'][$i]);
             $i++;
         }
@@ -66,10 +76,7 @@ class MY_Controller extends CI_Controller
 
         function cmp($a, $b)
         {
-            if ($a->post_date == $b->post_date) {
-                return 0;
-            }
-
+            if ($a->post_date == $b->post_date) { return 0; }
             return ($a->post_date < $b->post_date) ? 1 : -1;
         }
         usort($this->data['posts'], "cmp");

@@ -10,6 +10,10 @@ class Settings extends MY_Controller
     {
         parent::__construct();
         $this->load->helper('form');
+        if($this->data['user'] == null || $this->data['user']->role->id > 4)
+        {
+            redirect('/');
+        }
     }
 
     public function index()
@@ -88,7 +92,7 @@ class Settings extends MY_Controller
 
     public function widgets()
     {
-        $available_widgets = $this->Model_widgets->get_available();
+        $available_widgets = $this->Model_widgets->get_widgets_abs();
 
         $this->load->view('components/view_header',
             [
@@ -114,17 +118,12 @@ class Settings extends MY_Controller
 
     public function widgets_save()
     {
-        if($this->data['user'] == null || $this->data['user']->role->id > 4)
-        {
-            redirect('/');
-        }
-
         if(isset($_POST['widget_position']) && isset($_POST['widget_name']))
         {
             $widget_name = $this->input->get_post('widget_name');
             $widget_position = $this->input->get_post('widget_position');
 
-            $widget = $this->Model_widgets->get_by(['path' => $widget_name], true);
+            $widget = $this->Model_widgets->get_widgets_abs_by(['path' => $widget_name], true);
 
             if(!empty($widget ))
             {
@@ -135,15 +134,30 @@ class Settings extends MY_Controller
                 [
                     'name' => $widget->name,
                     'path' => $widget->path,
-                    'style' => $widget->style,
-                    'options' => $widget->options,
-                    'active' => $widget->active,
+                    'active' => 1,
                     'position' => $widget_position,
                     'role_id' => $widget->role_id
                 ];
 
             $this->Model_widgets->save($data);
         }
+    }
+    public function widgets_delete()
+    {
+        if($this->data['user'] == null || $this->data['user']->role->id > 4)
+        {
+            redirect('/');
+        }
+
+        $this->Model_widgets->delete($this->input->get_post('widget_id'));
+        echo true;
+        return true;
+    }
+
+    public function themes()
+    {
+        redirect('/themes');
+
     }
 
 }

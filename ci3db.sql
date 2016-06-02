@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Час створення: Трв 31 2016 р., 15:02
+-- Час створення: Трв 26 2016 р., 00:49
 -- Версія сервера: 5.5.49-0+deb8u1
 -- Версія PHP: 5.6.20-0+deb8u1
 
@@ -84,15 +84,14 @@ CREATE TABLE IF NOT EXISTS `confirmation` (
 `id` int(11) NOT NULL,
   `key` varchar(255) NOT NULL,
   `login` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `confirmation`
 --
 
 INSERT INTO `confirmation` (`id`, `key`, `login`) VALUES
-(13, 'd3805ba9907ddf829cd7ea5bf8bbf6d525e9a3b2', 'ci3user'),
-(14, 'ed03d7475160d6c55a80aaf94a26e22602458ff5', 'Nika1');
+(7, '28bffb541785ee1b676df6981702bed9830d913d', 'Vovat');
 
 -- --------------------------------------------------------
 
@@ -117,9 +116,9 @@ CREATE TABLE IF NOT EXISTS `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `author_id`, `attachment`, `date`, `tags`, `category_id`, `slug`) VALUES
-(18, 'Hello World!', '<p>asdjkfguklajdhgjklsahdfjk asdfjkl dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 9, 'default-post.png', '2016-05-19 15:19:19', '', 1, 'HelloWorld'),
-(22, 'Hello World3', '<p> dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
-(24, 'hdfkghd!@#$!@@# -gvy', '<p>dsjksjdgkjdfngjdkfg</p>', 9, 'default-post.png', '2016-05-24 18:42:51', ''';drop table tb1', 2, 'hdfkghd-gvy');
+(18, 'Hello World!', '<p><strong>asdjkfguklajdhgjklsahdfjk asdfjkl dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,<em> and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</em></strong></p>', 9, 'default-post.png', '2016-05-19 15:19:19', '', 1, 'HelloWorld'),
+(22, 'Hello World3', 'asdjkfguklajdhgjklsahdfjk asdfjkl dh;sadjkf bhakdagnjdfgk', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(24, 'hdfkghd!@#$!@@# -gvy', 'dsjksjdgkjdfngjdkfg', 9, 'default-post.png', '2016-05-24 18:42:51', '', 2, 'hdfkghd-gvy');
 
 -- --------------------------------------------------------
 
@@ -156,17 +155,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
---
--- Дамп даних таблиці `settings`
---
-
-INSERT INTO `settings` (`id`, `name`, `value`) VALUES
-(1, 'site_name', 'Web Site'),
-(2, 'contact_email', 'ya.kosteckiy@gmail.com'),
-(3, 'domain', 'ci3.ukrspace.com'),
-(4, 'keywords', 'SofgGroup, sg, IT Company, PHP Development, PHP Academy, CMS, CodeIgniter3, ci3');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -185,8 +174,8 @@ CREATE TABLE IF NOT EXISTS `templates` (
 --
 
 INSERT INTO `templates` (`id`, `name`, `template`) VALUES
-(1, 'Confirmation', '<p>Dear, {login}!<br>We are very glab for you in our community!<br>To confirm you account click {here}!</p>'),
-(2, 'Restore', '<p xss=removed><strong>Dear, {login}!</strong><br><strong>If you don''t restore your password tall about it Administrator! Forgot for this massage!</strong><br><strong>This is your new password: {password}</strong></p>');
+(1, 'Confirmation', 'Dear, {login}!<br>We are very grab for you in our community!<br>To confirm you account click {here}!'),
+(2, 'Restore', '<p style="text-align: center;">Dear, {login}!<br />If you don''t restore your password tall about it Administrator! Forgot for this massage!<br />This is your new password: {password}</p>');
 
 -- --------------------------------------------------------
 
@@ -201,46 +190,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(100) NOT NULL,
   `role_id` int(11) DEFAULT '5',
   `date_created` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `users`
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `role_id`, `date_created`) VALUES
-(9, 'Kosteckiy', 'e5da32ed6f5d15518837b102f9209551f8609b90', 'ya.kosteckiy@gmail.com', 1, '2013-05-18 11:48:33'),
-(61, '111111', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 4, '0000-00-00 00:00:00'),
+(9, 'Kosteckiy', 'f2980c5821c8f75e5ad4944cecd4b6b21a9e1198', 'ya.kosteckiy@gmail.com', 1, '2013-05-18 11:48:33'),
+(61, '111111', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 4, '2016-05-22 00:55:03'),
 (62, '22222', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 4, '2016-05-22 00:57:22'),
 (63, '00000', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 4, '2016-05-22 00:58:33'),
-(68, 'Alina', '0ee91ecab4013a1fffcd00e8f619002bb274cd0f', 'alisha.artemchyk@gmail.com', 4, '2016-05-22 16:08:46'),
-(79, 'ci3user', '356a192b7913b04c54574d18c28d46e6395428ab', '11111@111.dsf', 1, '2016-05-26 19:29:20'),
-(80, 'Nika1', '356a192b7913b04c54574d18c28d46e6395428ab', 'alisha.artemchyk@gmail.com', 5, '2016-05-30 14:53:54');
-
--- --------------------------------------------------------
-
---
--- Структура таблиці `widgets`
---
-
-CREATE TABLE IF NOT EXISTS `widgets` (
-`id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `path` text NOT NULL,
-  `style` varchar(255) DEFAULT NULL,
-  `position` varchar(50) NOT NULL,
-  `options` varchar(255) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '0',
-  `role_id` int(11) NOT NULL DEFAULT '6'
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
---
--- Дамп даних таблиці `widgets`
---
-
-INSERT INTO `widgets` (`id`, `name`, `path`, `style`, `position`, `options`, `active`, `role_id`) VALUES
-(1, 'Search', 'search_form', '', 'wdgt-nav', NULL, 1, 6),
-(2, 'Current Time', 'current_time', NULL, 'wdgt-footer-2', NULL, 1, 6),
-(7, 'Current Time', 'current_time', NULL, 'wdgt-sidebar-1', NULL, 1, 6);
+(68, 'Alina', '0ee91ecab4013a1fffcd00e8f619002bb274cd0f', 'alisha.artemchyk@gmail.com', 4, '2016-05-22 16:08:46');
 
 --
 -- Індекси збережених таблиць
@@ -295,12 +256,6 @@ ALTER TABLE `users`
  ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `widgets`
---
-ALTER TABLE `widgets`
- ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT для збережених таблиць
 --
 
@@ -318,7 +273,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT для таблиці `confirmation`
 --
 ALTER TABLE `confirmation`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблиці `posts`
 --
@@ -333,7 +288,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT для таблиці `settings`
 --
 ALTER TABLE `settings`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблиці `templates`
 --
@@ -343,12 +298,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT для таблиці `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=81;
---
--- AUTO_INCREMENT для таблиці `widgets`
---
-ALTER TABLE `widgets`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=78;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

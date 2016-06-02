@@ -44,7 +44,6 @@
                 <?php if (isset($user)):?>
                     <?php $this->load->view(strtolower($user->role->name).'/view_menu'); ?>
                 <?php endif;?>
-
                 <?=form_open('search/find', ['class' => 'navbar-form navbar-left', 'role' => 'search']) ?>
                 <div class="form-group">
                     <input type="text" class="form-control" name="search-request" placeholder="Search">
