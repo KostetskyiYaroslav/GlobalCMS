@@ -282,8 +282,8 @@
         <data-type>varchar(100)</data-type>
       </column>
       <column id="78" parent="12" name="activate">
+        <mandatory>1</mandatory>
         <data-type>tinyint(1)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
       </column>
       <key id="79" parent="12" name="PRIMARY">
         <columns>id</columns>
