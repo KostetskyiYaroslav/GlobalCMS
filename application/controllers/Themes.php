@@ -38,7 +38,7 @@ class Themes extends MY_Controller
 
     function activate($id)
     {
-        $this->Model_themes->save(['activate' => '1'], $id);
+        $this->Model_themes->activate_theme($id);
         redirect('/themes');
     }
 
