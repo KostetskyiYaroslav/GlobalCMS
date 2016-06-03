@@ -15,4 +15,10 @@ class Model_themes extends MY_Model
         parent::__construct();
     }
 
+    public function activate_theme($id)
+    {
+        $this->db->where(['activate' => '1']);
+        $this->db->update($this->table_name, ['activate' => '0']);
+        $this->save(['activate' => '1'], $id);
+    }
 }
