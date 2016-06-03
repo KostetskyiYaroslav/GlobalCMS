@@ -34,6 +34,7 @@ class MY_Controller extends CI_Controller
         $this->data['settings']     = NULL;
         $this->data['widgets']      = NULL;
         $this->data['themes']       = NULL;
+        $this->data['active_theme'] = NULL;
 
         if( isset($_COOKIE['CMS_login']) )
         {
@@ -52,6 +53,7 @@ class MY_Controller extends CI_Controller
         $this->data['settings']     = $this->Model_settings->get();
         $this->data['widgets']      = $this->Model_widgets->get();
         $this->data['themes']       = $this->Model_themes->get();
+        $this->data['active_theme'] = $this->Model_themes->get_by(['activate' => '1'])[0];
 
         function sort_widget($a, $b) {
             if($a->priority == $b->priority){ return 0 ; }
