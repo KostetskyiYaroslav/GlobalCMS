@@ -25,7 +25,7 @@ class Model_widgets extends MY_Model
         if( $id != NULL )
         {
             $filter = $this->primary_filter;
-            $id = $filter( $id );
+            $id     = $filter( $id );
             $this->db->where( $this->primary_key, $id );
             $method = 'row';
 
