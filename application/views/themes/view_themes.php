@@ -24,7 +24,11 @@
                     <th><?php echo anchor('themes/edit/'.$theme->id,$theme->name); ?></th>
                     <th><?php echo $theme->path; ?></th>
                     <th><?php echo $theme->author; ?></th>
-                    <th><img class="thumbnail col-xs-12" src="<?=$theme->screenshot?>"/></th>
+                    <?php if($theme->screenshot != '') : ?>
+                        <th><img class="thumbnail col-xs-12" src="<?=$theme->screenshot?>"/></th>
+                    <?php else: ?>
+                        <th><img class="thumbnail col-xs-12" src="<?=base_url('/assets/themes').'/'.$theme->path.'/screenshot.PNG'?>"/></th>
+                    <?php endif; ?>
                     <th><div><?php echo $theme->description = substr($theme->description, 0, 100 ); ?></div></th>
                     <th class="danger text-center ">
                         <?=anchor('themes/activate/'.$theme->id,'<i class="col-xs-12 glyphicon glyphicon-ok"></i>');?><br />

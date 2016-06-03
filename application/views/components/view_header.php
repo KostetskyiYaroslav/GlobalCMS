@@ -19,11 +19,12 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="<?php echo base_url().'assets/js/jquery-2.2.4.min.js'?>"></script>
-    <?php if(isset($user) && $user->role_id > 4): ?>
-        <link href="<?=base_url().'assets/css/user-style.css'?>" rel="stylesheet">
-    <?php elseif ( isset($user) && $user->role_id < 4 ): ?>
-        <link href="<?=base_url().'assets/css/admin-style.css'?>" rel="stylesheet">
-    <?php endif;?>
+    <?php /*if(isset($user) && $user->role_id > 4): */?><!--
+        <link href="<?/*=base_url().'assets/css/user-style.css'*/?>" rel="stylesheet">
+    <?php /*elseif ( isset($user) && $user->role_id < 4 ): */?>
+        <link href="<?/*=base_url().'assets/css/admin-style.css'*/?>" rel="stylesheet">
+    --><?php /*endif;*/?>
+    <link href="<?=base_url().'assets/themes/'.$this->data['active_theme']->path.'/theme.css'?>" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default">
