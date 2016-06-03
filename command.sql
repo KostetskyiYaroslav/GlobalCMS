@@ -61,20 +61,16 @@ CREATE TABLE `ci3db`.`widgets`
   `options` NVARCHAR(255) NULL
 );
 
-#endregion
-
-/* Pages Not active
-CREATE TABLE `ci3db`.`pages`
+CREATE TABLE `ci3db`.`themes`
 (
-`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-`name`        VARCHAR(100) NOT NULL,
-`body`        TEXT NOT NULL,
-`attachment`  VARCHAR(100) NOT NULL,
-`date`        VARCHAR(100) NOT NULL,
-`author_id`   VARCHAR(100) NOT NULL,
-`role_id`     VARCHAR(100) NOT NULL DEFAULT 6
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `path` NVARCHAR(100) NOT NULL ,
+  `author` NVARCHAR(100) NULL ,
+  `description` NVARCHAR(100)  NULL
 );
-*/
+
+#endregion
 
 #region Insert
 
@@ -123,6 +119,5 @@ FOR EACH ROW BEGIN
   DELETE FROM `posts` WHERE `category_id` = `old`.`id`;
 END;
 
-show TABLES ;
 #endregion
 
