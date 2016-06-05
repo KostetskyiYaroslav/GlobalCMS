@@ -142,6 +142,7 @@ class Settings extends MY_Controller
             $this->Model_widgets->save($data);
         }
     }
+    
     public function widgets_delete()
     {
         if($this->data['user'] == null || $this->data['user']->role->id > 4)
