@@ -222,70 +222,74 @@
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="63" parent="11" name="id">
+      <trigger id="63" parent="10" name="remove_active_widgets">
+        <trig-events>D</trig-events>
+        <trig-turn>AFTER_ROW</trig-turn>
+      </trigger>
+      <column id="64" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="64" parent="11" name="name">
+      <column id="65" parent="11" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="65" parent="11" name="path">
+      <column id="66" parent="11" name="path">
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
-      <column id="66" parent="11" name="priority">
+      <column id="67" parent="11" name="priority">
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="67" parent="11" name="position">
+      <column id="68" parent="11" name="position">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="68" parent="11" name="options">
+      <column id="69" parent="11" name="options">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="69" parent="11" name="active">
+      <column id="70" parent="11" name="active">
         <data-type>tinyint(1)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="70" parent="11" name="role_id">
+      <column id="71" parent="11" name="role_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;6&apos;</default-expression>
       </column>
-      <key id="71" parent="11" name="PRIMARY">
+      <key id="72" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="72" parent="12" name="id">
+      <column id="73" parent="12" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="73" parent="12" name="name">
+      <column id="74" parent="12" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="74" parent="12" name="path">
+      <column id="75" parent="12" name="path">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="75" parent="12" name="author">
+      <column id="76" parent="12" name="author">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="76" parent="12" name="description">
+      <column id="77" parent="12" name="description">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="77" parent="12" name="screenshot">
+      <column id="78" parent="12" name="screenshot">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="78" parent="12" name="activate">
+      <column id="79" parent="12" name="activate">
         <mandatory>1</mandatory>
         <data-type>tinyint(1)</data-type>
       </column>
-      <key id="79" parent="12" name="PRIMARY">
+      <key id="80" parent="12" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
