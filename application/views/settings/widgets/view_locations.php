@@ -7,6 +7,7 @@
             <?php foreach ($available_widgets as $available_widget):?>
                 <div id="widget" class="draggable drag-drop" title="<?=$available_widget->path?>">#<?=$available_widget->name?></div>
             <?php endforeach;?>
+            <a href="/widgets/install" class="row col-xs-12 btn btn-success">Add new widgets</a>
         </div>
     </div>
     <div class="row col-xs-3">

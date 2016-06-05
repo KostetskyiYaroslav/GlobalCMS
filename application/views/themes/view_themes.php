@@ -39,6 +39,7 @@
                 <?php endforeach; ?>
                 </tbody>
             </table>
+            <a href="/themes/install" class="row col-xs-12 btn btn-success">Add new theme</a>
         </div>
     </div>
 <?php $this->load->view('components/view_footer'); ?>

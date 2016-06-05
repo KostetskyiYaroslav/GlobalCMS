@@ -1,6 +1,6 @@
 <div class="container body">
     <div class="row col-xs-9">
-        <div class="single-post">
+        <div class="row col-xs-12 single-post">
             <div class="row col-xs-12">
                 <h2 class="col-xs-9">
                     <?php echo $single_post->post_title; ?>
@@ -30,7 +30,7 @@
                 </p>
             </div>
         </div>
-        <div class="single-post-comments">
+        <div class="row col-xs-12 single-post-comments">
             <?php if($single_post->comments != null) : ?>
                 <?php foreach ($single_post->comments as $comment) : ?>
                     <div class=" col-xs-12 single-post-comment">
@@ -38,7 +38,7 @@
                             <div class="row">
                                 <?php echo anchor('users/single/'.$comment->user_login, $comment->user_login).' - '.$comment->user_role; ?>
                             </div>
-                            <div>
+                            <div class="row">
                                 <?php echo $comment->comment_date; ?>
                             </div>
                         </div>
