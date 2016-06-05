@@ -1,0 +1,15 @@
+body
+{
+    background: url("http://pro.europeana.eu/thumbs/600x315c/Images/Teaser_images/bg_europeana-pro.jpg") repeat;
+}
+
+.navbar
+{
+    background: pink;
+}
+
+.dropdown-menu
+{
+    background: red;
+}
+

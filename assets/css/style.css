@@ -25,3 +25,9 @@ body
 {
     min-width: 1170px
 }
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
