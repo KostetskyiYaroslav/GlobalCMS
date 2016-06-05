@@ -130,8 +130,96 @@ class Themes extends MY_Controller
 
     function delete($id)
     {
-        $this->Model_themes->delete($id);
+        $remove_theme = $this->Model_themes->get($id, TRUE);
+
+        $dirPath = './assets/themes/'.$remove_theme->path;
+
+        if (! is_dir($dirPath)) {
+            throw new InvalidArgumentException("$dirPath must be a directory");
+        }
+        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+            $dirPath .= '/';
+        }
+        $files = glob($dirPath . '*', GLOB_MARK);
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                self::delete_dir($file);
+            } else {
+                unlink($file);
+            }
+        }
+        rmdir($dirPath);
+        $this->Model_themes->delete($remove_theme->id);
+
         redirect('/themes');
     }
+
+    function install()
+    {
+        $config['upload_path']          = './assets/themes/';
+        $config['allowed_types']        = 'zip';
+        $config['max_size']             = 5000;
+        $config['overwrite']            = TRUE;
+        $config['file_ext_tolower']     = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('userfile'))
+        {
+            $error = array('error' => $this->upload->display_errors());
+            $this->load->view('components/view_header',
+                [
+                    'title' => 'Theme install',
+                    'auth' => $this->data['auth'],
+                    'user' => $this->data['user'],
+                    'widgets' => $this->data['widgets']
+                ]
+            );
+            $this->load->view('themes/view_upload',
+                array
+                (
+                    'categories' => $this->data['categories'],
+                    'widgets' => $this->data['widgets'],
+                    'error' => $error
+                )
+            );
+        }
+        else
+        {
+            $upload_path = './assets/themes/';
+            $data = array('upload_data' => $this->upload->data());
+            $raw_name = $data['upload_data']['raw_name'];
+            mkdir($upload_path.$raw_name, 0700);
+
+            $zip = new ZipArchive;
+            $file = $data['upload_data']['full_path'];
+            chmod($file, 0777);
+            if ($zip->open($file) === TRUE) {
+                $zip->extractTo($upload_path.$raw_name);
+                $zip->close();
+            }
+
+            rename( $upload_path.$raw_name.'/'.$raw_name.'.css',
+                $upload_path.$raw_name.'/theme.css' );
+
+            chmod($upload_path.$raw_name, 0755);
+
+            unlink($upload_path.$this->upload->file_name);
+
+            $this->Model_themes->save(
+                [
+                    'name' => ucfirst($raw_name),
+                    'author' => 'Not set',
+                    'path' => $raw_name,
+                    'description' => 'Not set',
+                    'screenshot' => '',
+                    'activate' => '0'
+                ]
+            );
+            redirect('/settings/themes');
+        }
+
+    }
+
 
 }
