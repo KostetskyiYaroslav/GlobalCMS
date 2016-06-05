@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Час створення: Чрв 04 2016 р., 01:06
+-- Час створення: Чрв 06 2016 р., 00:31
 -- Версія сервера: 5.5.49-0+deb8u1
 -- Версія PHP: 5.6.20-0+deb8u1
 
@@ -202,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `themes` (
   `description` varchar(100) DEFAULT NULL,
   `screenshot` varchar(100) DEFAULT NULL,
   `activate` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `themes`
@@ -211,7 +211,8 @@ CREATE TABLE IF NOT EXISTS `themes` (
 INSERT INTO `themes` (`id`, `name`, `path`, `author`, `description`, `screenshot`, `activate`) VALUES
 (4, 'Standard', 'standard', 'KostetskiyCMS', 'This theme are default on web site', NULL, 0),
 (5, 'Minimalistic', 'minimalistic', 'Yaroslav', 'This theme make your site easy to view and beautiful colors rich your pages.', NULL, 0),
-(6, 'Special Theme', 'special_theme', 'Another Author', 'This theme different from other.', NULL, 1);
+(6, 'Special Theme', 'special_theme', 'Another Author', 'This theme different from other.', NULL, 0),
+(15, 'Sweet', 'sweet', 'Not set', 'Not set', '', 1);
 
 -- --------------------------------------------------------
 
@@ -252,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `widgets_abs` (
   `name` varchar(100) NOT NULL,
   `path` varchar(255) NOT NULL,
   `role_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `widgets_abs`
@@ -260,7 +261,20 @@ CREATE TABLE IF NOT EXISTS `widgets_abs` (
 
 INSERT INTO `widgets_abs` (`id`, `name`, `path`, `role_id`) VALUES
 (1, 'Current Time', 'current_time', 6),
-(2, 'Search Form', 'search_form', 6);
+(2, 'Search Form', 'search_form', 6),
+(8, 'Advertising', 'advertising', 6),
+(9, 'Advertising', 'advertising', 6);
+
+--
+-- Тригери `widgets_abs`
+--
+DELIMITER //
+CREATE TRIGGER `remove_active_widgets` AFTER DELETE ON `widgets_abs`
+ FOR EACH ROW BEGIN
+  DELETE FROM `widgets_act` WHERE `path` = `old`.`path`;
+END
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -277,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `widgets_act` (
   `options` varchar(255) DEFAULT NULL,
   `active` tinyint(1) DEFAULT '0',
   `role_id` int(11) NOT NULL DEFAULT '6'
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `widgets_act`
@@ -292,7 +306,10 @@ INSERT INTO `widgets_act` (`id`, `name`, `path`, `priority`, `position`, `option
 (72, 'Current Time', 'current_time', 65, 'wdgt-footer-1', NULL, 1, 6),
 (81, 'Current Time', 'current_time', 0, 'wdgt-sidebar-1', NULL, 1, 6),
 (84, 'Current Time', 'current_time', 0, 'wdgt-footer-2', NULL, 1, 6),
-(85, 'Current Time', 'current_time', 0, 'wdgt-footer-1', NULL, 1, 6);
+(86, 'Current Time', 'current_time', 0, 'wdgt-footer-1', NULL, 1, 6),
+(92, 'Advertising', 'advertising', 0, 'wdgt-footer-3', NULL, 1, 6),
+(93, 'Advertising', 'advertising', 0, 'wdgt-footer-2', NULL, 1, 6),
+(94, 'Advertising', 'advertising', 0, 'wdgt-footer-2', NULL, 1, 6);
 
 --
 -- Індекси збережених таблиць
@@ -407,7 +424,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT для таблиці `themes`
 --
 ALTER TABLE `themes`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT для таблиці `users`
 --
@@ -417,12 +434,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=81;
 -- AUTO_INCREMENT для таблиці `widgets_abs`
 --
 ALTER TABLE `widgets_abs`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблиці `widgets_act`
 --
 ALTER TABLE `widgets_act`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=95;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
