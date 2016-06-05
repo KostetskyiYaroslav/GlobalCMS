@@ -119,5 +119,10 @@ FOR EACH ROW BEGIN
   DELETE FROM `posts` WHERE `category_id` = `old`.`id`;
 END;
 
+CREATE TRIGGER `remove_active_widgets` AFTER DELETE ON `widgets_abs`
+FOR EACH ROW BEGIN
+  DELETE FROM `widgets_act` WHERE `path` = `old`.`path`;
+END;
+
 #endregion
 
