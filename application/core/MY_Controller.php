@@ -53,7 +53,12 @@ class MY_Controller extends CI_Controller
         $this->data['settings']     = $this->Model_settings->get();
         $this->data['widgets']      = $this->Model_widgets->get();
         $this->data['themes']       = $this->Model_themes->get();
-        $this->data['active_theme'] = $this->Model_themes->get_by(['activate' => '1'])[0];
+        $this->data['active_theme'] = $this->Model_themes->get_by(['activate' => '1']);
+
+        $this->data['active_theme'] =
+            (empty($this->data['active_theme']))
+                ? $this->Model_themes->get_by(['name' => 'Standard'])[0]
+                : $this->data['active_theme'][0];
 
         function sort_widget($a, $b) {
             if($a->priority == $b->priority){ return 0 ; }
