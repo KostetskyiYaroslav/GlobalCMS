@@ -31,3 +31,8 @@ body
     overflow: hidden;
     margin: 10px;
 }
+
+.text-white
+{
+    color: white;
+}
