@@ -5,6 +5,7 @@ class Widgets extends MY_Controller
     {
         parent::__construct();
         $this->load->helper('form');
+
     }
 
     function index()
@@ -79,7 +80,7 @@ class Widgets extends MY_Controller
             }
 
             rename( $upload_path.$raw_name.'/'.$raw_name.'.php',
-                    $upload_path.$raw_name.'/widget.php' );
+                $upload_path.$raw_name.'/widget.php' );
             unlink($upload_path.$this->upload->file_name);
 
             $this->Model_widgets->save_get_widgets_abs(
@@ -93,4 +94,106 @@ class Widgets extends MY_Controller
         }
 
     }
+
+    function delete($id)
+    {
+        $this->Model_widgets->delete($id);
+        redirect('/settings/widgets');
+        //HOWTO: як дістати посилення звідки користувач прийшов на сторінку.
+    }
+
+    public function edit($id)
+    {
+        $message    = NULL;
+
+        $update_widget = $this->Model_widgets->get($id, TRUE);
+
+        $this->load->view( 'components/view_header',
+            [
+                'title' => 'Edit Widget',
+                'auth'  => $this->data['auth'],
+                'user'  => $this->data['user']
+            ]
+        );
+        
+        if(isset($_POST['update-widget-id']))
+        {
+            $name = $position = $priority = $options = $active = $role_id = NULL;
+
+            if(isset($_POST['update-widget-name']) && $_POST['update-widget-name'] != '')
+            {
+                $name = $this->input->get_post('update-widget-name');
+
+            } else {
+
+                $name = $update_widget->name;
+            }
+            if(isset($_POST['update-widget-position']) && $_POST['update-widget-position'] != '')
+            {
+                $position = $this->input->get_post('update-widget-position');
+
+            } else {
+
+                $position = $update_widget->position;
+            }
+            if(isset($_POST['update-widget-priority']) && $_POST['update-widget-priority'] != '')
+            {
+                $priority = $this->input->get_post('update-widget-priority');
+
+            } else {
+
+                $priority = $update_widget->priority;
+            }
+            if(isset($_POST['update-widget-options']) && $_POST['update-widget-options'] != '')
+            {
+                $options = $this->input->get_post('update-widget-options');
+
+            } else {
+
+                $options = $update_widget->options;
+            }
+            if(isset($_POST['update-widget-active']) && $_POST['update-widget-active'] != '')
+            {
+                $active = $this->input->get_post('update-widget-active');
+
+            } else {
+
+                $active = $update_widget->active;
+            }
+            if(isset($_POST['update-widget-role_id']) && $_POST['update-widget-role_id'] != '')
+            {
+                $role_id = $this->input->get_post('update-widget-role_id');
+
+            } else {
+
+                $role_id = $update_widget->role_id;
+            }
+
+            $update_data = [
+                'name'=> $name,
+                'position'=> $position,
+                'priority'=> $priority,
+                'options'=> $options,
+                'active'=> $active,
+                'role_id'=> $role_id
+            ];
+
+            $this->Model_widgets->save($update_data, $id);
+            $message = 'Widget successfully updated!';
+        }
+
+        if(empty($update_widget))
+        {
+            $message = 'Widget dose not exist!';
+        }
+
+        $this->load->view('settings/widgets/view_edit',
+            [
+                'update_widget'   => $update_widget,
+                'message'       => $message
+            ]
+        );
+
+    }
+
 }
