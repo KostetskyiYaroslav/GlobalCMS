@@ -34,13 +34,13 @@
             <label class="col-xs-6" for="update-theme-screenshot">Screenshot:</label>
             <?php echo form_input(['type'=>'text','value' => $update_theme->screenshot, 'class' => 'col-xs-6', 'id'=>'update-theme-screenshot', 'name'=>'update-theme-screenshot']);?>
         </p>
-        <p class="col-xs-8">
-            <textarea id="update-post-body" name="update-post-body" class="col-xs-12" rows="10">
+        <div class="col-xs-8">
+            <textarea id="update-theme-description" name="update-theme-description" class="col-xs-12" rows="10" title="Description">
                 <?php echo $update_theme->description; ?>
             </textarea>
-        </p>
-        <?php if( $update_theme->screenshot == '') : ?>
-            <img class="col-xs-12 img-thumbnail" src="<?=base_url('assets/uploads/static/default-post.png')?>">
+        </div>
+        <?php if( empty($update_theme->screenshot)) : ?>
+            <img class="col-xs-12 img-thumbnail" src="<?=base_url('assets/themes/'.$update_theme->path.'/screenshot.PNG')?>">
         <?php else : ?>
             <img class="col-xs-12 img-thumbnail" src="<?=$update_theme->screenshot?>">
         <?php endif;  ?>
