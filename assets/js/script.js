@@ -89,3 +89,4 @@ interact('.dropzone').dropzone({
         console.log('ondropdeactivate');
     }
 });
+
