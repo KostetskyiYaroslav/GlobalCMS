@@ -70,6 +70,16 @@ CREATE TABLE `ci3db`.`themes`
   `description` NVARCHAR(100)  NULL
 );
 
+CREATE TABLE `ci3db`.`media`
+(
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `hash_name` VARCHAR(255) NOT NULL ,
+  `link` VARCHAR(255) NOT NULL ,
+  `date` DATETIME NULL,
+  `author_id` INT REFERENCES `ci3db`.`users`(`id`)
+);
+
 #endregion
 
 #region Insert
@@ -125,4 +135,3 @@ FOR EACH ROW BEGIN
 END;
 
 #endregion
-
