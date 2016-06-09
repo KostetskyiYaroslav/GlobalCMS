@@ -19,13 +19,15 @@ class MY_Controller extends CI_Controller
         $this->load->model('Model_settings');
         $this->load->model('Model_widgets');
         $this->load->model('Model_themes');
+        $this->load->model('Model_media');
 
         //$this->data['site_name']    = config_item('site_name');
         $this->data['error']        = array();
         $this->data['auth']         = FALSE;
-        $this->data['posts']        = NULL;
         $this->data['user']         = NULL;
+        $this->data['posts']        = NULL;
         $this->data['users']        = NULL;
+        $this->data['media']        = NULL;
         $this->data['pages']        = NULL;
         $this->data['comments']     = NULL;
         $this->data['categories']   = NULL;
@@ -54,6 +56,7 @@ class MY_Controller extends CI_Controller
         $this->data['widgets']      = $this->Model_widgets->get();
         $this->data['themes']       = $this->Model_themes->get();
         $this->data['active_theme'] = $this->Model_themes->get_by(['activate' => '1']);
+        $this->data['media']        = $this->Model_media->get();
 
         $this->data['active_theme'] =
             (empty($this->data['active_theme']))
