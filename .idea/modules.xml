@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sg_cms.iml" filepath="$PROJECT_DIR$/.idea/sg_cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GlobalCMS.iml" filepath="$PROJECT_DIR$/.idea/GlobalCMS.iml" />
     </modules>
   </component>
 </project>
