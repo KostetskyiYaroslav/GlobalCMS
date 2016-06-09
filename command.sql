@@ -135,3 +135,6 @@ FOR EACH ROW BEGIN
 END;
 
 #endregion
+
+
+SHOW TABLES ;
