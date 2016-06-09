@@ -189,7 +189,7 @@ class Themes extends MY_Controller
             $upload_path = './assets/themes/';
             $data = array('upload_data' => $this->upload->data());
             $raw_name = $data['upload_data']['raw_name'];
-            mkdir($upload_path.$raw_name, 0700);
+            mkdir($upload_path.$raw_name, 0744);
 
             $zip = new ZipArchive;
             $file = $data['upload_data']['full_path'];
@@ -221,5 +221,25 @@ class Themes extends MY_Controller
 
     }
 
+    private function _chmod_r($dir, $dirPermissions, $filePermissions) {
+        $dp = opendir($dir);
+        while($file = readdir($dp)) {
+            if (($file == ".") || ($file == ".."))
+                continue;
+
+            $fullPath = $dir."/".$file;
+
+            if(is_dir($fullPath)) {
+                echo('DIR:' . $fullPath . "\n");
+                chmod($fullPath, $dirPermissions);
+                $this->chmod_r($fullPath, $dirPermissions, $filePermissions);
+            } else {
+                echo('FILE:' . $fullPath . "\n");
+                chmod($fullPath, $filePermissions);
+            }
+
+        }
+        closedir($dp);
+    }
 
 }
