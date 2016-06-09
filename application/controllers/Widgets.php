@@ -69,11 +69,10 @@ class Widgets extends MY_Controller
             $upload_path = './application/views/settings/widgets/';
             $data = array('upload_data' => $this->upload->data());
             $raw_name = $data['upload_data']['raw_name'];
-            mkdir($upload_path.$raw_name, 0700);
-
+            mkdir($upload_path.$raw_name, 0744);
             $zip = new ZipArchive;
             $file = $data['upload_data']['full_path'];
-            chmod($file, 0777);
+            chmod($file, 0744);
             if ($zip->open($file) === TRUE) {
                 $zip->extractTo($upload_path.$raw_name);
                 $zip->close();
@@ -99,7 +98,6 @@ class Widgets extends MY_Controller
     {
         $this->Model_widgets->delete($id);
         redirect('/settings/widgets');
-        //HOWTO: як дістати посилення звідки користувач прийшов на сторінку.
     }
 
     public function edit($id)
