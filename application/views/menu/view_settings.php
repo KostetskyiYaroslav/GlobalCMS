@@ -4,9 +4,10 @@
             <table class="table table-bordered">
                 <tbody >
                 <tr >
-                    <th class="text-center col-xs-4"><a href="/settings/widgets">Widgets</a></th>
-                    <th class="text-center col-xs-4"><a href="/settings/themes">Themes</a></th>
-                    <th class="text-center col-xs-4"><a href="/settings/smintresting">Ще придумаю :)</a></th>
+                    <th class="text-center col-xs-3"><a href="/settings/widgets">Widgets</a></th>
+                    <th class="text-center col-xs-3"><a href="/settings/themes">Themes</a></th>
+                    <th class="text-center col-xs-3"><a href="/media">Media Files</a></th>
+                    <th class="text-center col-xs-3"><a href="/settings/smintresting">Ще придумаю :)</a></th>
                 </tr>
                 </tbody>
             </table>
