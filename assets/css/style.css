@@ -36,3 +36,8 @@ body
 {
     color: white;
 }
+
+.input-field
+{
+    margin:5px;
+}
