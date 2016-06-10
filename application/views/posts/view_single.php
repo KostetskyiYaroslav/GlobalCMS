@@ -47,17 +47,10 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
-            <?php else: ?>
             <?php endif;?>
         </div>
     </div>
-    <section>
-
-    </section>
     <div class="row col-xs-3">
-        <div class="sidebar">
-            <h3>Some information</h3>
-            <p>Some information</p>
-        </div>
+        <?php $this->load->view('components/view_sidebar', ['categories' => $this->data['categories']]);?>
     </div>
 <?php $this->load->view('components/view_footer'); ?>

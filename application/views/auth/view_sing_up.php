@@ -41,9 +41,7 @@
         </div>
         <?=form_close()?>
     </div>
-    <div class="container col-xs-3">
-        <div class="sidebar">
-            <h3>Some information</h3>
-            <p>Some information</p>
-        </div>
-    </div>    <?php $this->load->view('components/view_footer'); ?>
+    <div class="row col-xs-3">
+        <?php $this->load->view('components/view_sidebar', ['categories' => $this->data['categories']]);?>
+    </div>
+    <?php $this->load->view('components/view_footer'); ?>
