@@ -19,11 +19,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="<?php echo base_url().'assets/js/jquery-2.2.4.min.js'?>"></script>
-    <?php /*if(isset($user) && $user->role_id > 4): */?><!--
-        <link href="<?/*=base_url().'assets/css/user-style.css'*/?>" rel="stylesheet">
-    <?php /*elseif ( isset($user) && $user->role_id < 4 ): */?>
-        <link href="<?/*=base_url().'assets/css/admin-style.css'*/?>" rel="stylesheet">
-    --><?php /*endif;*/?>
     <link href="<?=base_url().'assets/themes/'.$this->data['active_theme']->path.'/theme.css'?>" rel="stylesheet">
 </head>
 <body>
@@ -42,15 +37,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav widget-location wdgt-nav">
+                <?php foreach ($this->data['navigation'] as $item) : ?>
+                    <?php if ($item->link[0] == '/') : ?>
+                        <li><a href="<?=$item->link?>"><?=$item->name?></a></li>
+                    <?php else : ?>
+                        <li><a target="_blank" href="<?=$item->link?>"><?=$item->name?></a></li>
+                    <?php endif;?>
+                <?php endforeach; ?>
                 <?php if (isset($user)):?>
                     <?php $this->load->view(strtolower($user->role->name).'/view_menu'); ?>
                 <?php endif;?>
-                <?=form_open('search/find', ['class' => 'navbar-form navbar-left', 'role' => 'search']) ?>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="search-request" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-                <?=form_close()?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if( $auth ) { ?>
