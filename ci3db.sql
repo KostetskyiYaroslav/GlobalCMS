@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Час створення: Чрв 06 2016 р., 00:31
+-- Час створення: Чрв 10 2016 р., 22:42
 -- Версія сервера: 5.5.49-0+deb8u1
 -- Версія PHP: 5.6.20-0+deb8u1
 
@@ -97,6 +97,56 @@ INSERT INTO `confirmation` (`id`, `key`, `login`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблиці `media`
+--
+
+CREATE TABLE IF NOT EXISTS `media` (
+`id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `hash_name` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `date` datetime DEFAULT NULL,
+  `author_id` int(11) DEFAULT NULL,
+  `type` varchar(50) NOT NULL,
+  `share_link` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп даних таблиці `media`
+--
+
+INSERT INTO `media` (`id`, `name`, `hash_name`, `link`, `date`, `author_id`, `type`, `share_link`) VALUES
+(80, '1', 'ef5b539de6caabad1c7ccb5d0da33f39', 'http://www.ci3.ukrspace.com/assets/uploads/media/ef5b539de6caabad1c7ccb5d0da33f39.png', '2016-06-10 00:26:27', 9, '.png', '<img class=''col-xs-12'' src=''http://www.ci3.ukrspace.com/assets/uploads/media/ef5b539de6caabad1c7ccb5d0da33f39.png''></img>'),
+(81, '2', '893ba2ae65b55b68e59eb55ca5778a0a', 'http://www.ci3.ukrspace.com/assets/uploads/media/893ba2ae65b55b68e59eb55ca5778a0a.png', '2016-06-10 00:26:32', 9, '.png', '<img class=''col-xs-12'' src=''http://www.ci3.ukrspace.com/assets/uploads/media/893ba2ae65b55b68e59eb55ca5778a0a.png''></img>'),
+(82, '3', '72133ba999763d465e615ae26d52282c', 'http://www.ci3.ukrspace.com/assets/uploads/media/72133ba999763d465e615ae26d52282c.png', '2016-06-10 00:26:38', 9, '.png', '<img class=''col-xs-12'' src=''http://www.ci3.ukrspace.com/assets/uploads/media/72133ba999763d465e615ae26d52282c.png''></img>'),
+(83, '4', 'c78913799698fe2ea7929876c991f3c3', 'http://www.ci3.ukrspace.com/assets/uploads/media/c78913799698fe2ea7929876c991f3c3.png', '2016-06-10 00:26:42', 9, '.png', '<img class=''col-xs-12'' src=''http://www.ci3.ukrspace.com/assets/uploads/media/c78913799698fe2ea7929876c991f3c3.png''></img>'),
+(84, '5', 'f61b034c97ce05792f530a4422dddb88', 'http://www.ci3.ukrspace.com/assets/uploads/media/f61b034c97ce05792f530a4422dddb88.png', '2016-06-10 00:26:47', 9, '.png', '<img class=''col-xs-12'' src=''http://www.ci3.ukrspace.com/assets/uploads/media/f61b034c97ce05792f530a4422dddb88.png''></img>'),
+(85, 'TeamViewer_Setup_uk', '204e71dc18410777484110cbe53003a2', 'http://www.ci3.ukrspace.com/assets/uploads/media/204e71dc18410777484110cbe53003a2.exe', '2016-06-10 11:21:11', 9, '.exe', 'http://www.ci3.ukrspace.com/assets/uploads/media/204e71dc18410777484110cbe53003a2.exe');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `navigation`
+--
+
+CREATE TABLE IF NOT EXISTS `navigation` (
+`id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `priority` int(11) DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп даних таблиці `navigation`
+--
+
+INSERT INTO `navigation` (`id`, `name`, `link`, `priority`) VALUES
+(9, 'VK Conversations', 'https://vk.com/im', 1),
+(26, 'Test Item 2', '/posts/view/18', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблиці `posts`
 --
 
@@ -110,16 +160,23 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `tags` varchar(255) DEFAULT NULL,
   `category_id` int(11) DEFAULT '1',
   `slug` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `author_id`, `attachment`, `date`, `tags`, `category_id`, `slug`) VALUES
-(18, 'Hello World!', '<p>asdjkfguklajdhgjklsahdfjk asdfjkl dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 9, 'default-post.png', '2016-05-19 15:19:19', '', 1, 'HelloWorld'),
-(22, 'Hello World3', '<p> dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
-(24, 'hdfkghd!@#$!@@# -gvy', '<p>dsjksjdgkjdfngjdkfg</p>', 9, 'default-post.png', '2016-05-24 18:42:51', ''';drop table tb1', 2, 'hdfkghd-gvy');
+(18, 'Hello World!', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to <video class=''col-xs-12'' controls=''controls''><source src=''http://www.ci3.ukrspace.com/assets/uploads/media/f4df7f065250cd35a2c2b25b4d43f313.mp4''></video></p>', 9, 'default-post.png', '2016-05-19 15:19:19', '', 1, 'HelloWorld'),
+(22, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to &lt;video class=''col-xs-12'' src=''http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp''&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(25, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to &lt;video class=''col-xs-12'' src=''http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp''&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(26, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to &lt;video class=''col-xs-12'' src=''http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp''&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(27, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to &lt;video class=''col-xs-12'' src=''http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp''&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(28, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to &lt;video class=''col-xs-12'' src=''http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp''&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(29, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scramb</p>\r\n<p> </p>\r\n<p>&lt;video class="col-xs-12" src="http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp"&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(30, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to &lt;video class=''col-xs-12'' src=''http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp''&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(31, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to &lt;video class=''col-xs-12'' src=''http://ci3.ukrspace.com/assets/uploads/media/57c694574bc93054c4af451de96f0c02.3gp''&gt;&lt;/video&gt;</p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3'),
+(32, 'Hello World3', '<p>dh;sadjkf bhakdagnjdfgkLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to <video class=''col-xs-12'' controls=''controls''><source src=''http://www.ci3.ukrspace.com/assets/uploads/media/f4df7f065250cd35a2c2b25b4d43f313.mp4''></video></p>', 9, 'default-post.png', '2016-05-24 14:33:52', '', 1, 'HelloWorld3');
 
 -- --------------------------------------------------------
 
@@ -202,17 +259,16 @@ CREATE TABLE IF NOT EXISTS `themes` (
   `description` varchar(100) DEFAULT NULL,
   `screenshot` varchar(100) DEFAULT NULL,
   `activate` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `themes`
 --
 
 INSERT INTO `themes` (`id`, `name`, `path`, `author`, `description`, `screenshot`, `activate`) VALUES
-(4, 'Standard', 'standard', 'KostetskiyCMS', 'This theme are default on web site', NULL, 0),
-(5, 'Minimalistic', 'minimalistic', 'Yaroslav', 'This theme make your site easy to view and beautiful colors rich your pages.', NULL, 0),
-(6, 'Special Theme', 'special_theme', 'Another Author', 'This theme different from other.', NULL, 0),
-(15, 'Sweet', 'sweet', 'Not set', 'Not set', '', 1);
+(4, 'Standard', 'standard', 'KostetskiyCMS', '<p xss=removed><em><strong>This theme are default on web site</strong></em></p>', NULL, 0),
+(5, 'Minimalistic Edit', 'minimalistic', 'Yaroslav Edit', '<p>This theme make your site easy to view and beautiful colors rich your pages.edit</p>', '', 0),
+(6, 'Special Theme', 'special_theme', 'Another Author', 'This theme different from other.', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -235,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `role_id`, `date_created`) VALUES
 (9, 'Kosteckiy', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 1, '2013-05-18 11:48:33'),
-(61, '111111', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 4, '0000-00-00 00:00:00'),
+(61, '111111', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', -13, '0000-00-00 00:00:00'),
 (62, '22222', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 4, '2016-05-22 00:57:22'),
 (63, '00000', '356a192b7913b04c54574d18c28d46e6395428ab', 'ya.kosteckiy@gmail.com', 4, '2016-05-22 00:58:33'),
 (68, 'Alina', '0ee91ecab4013a1fffcd00e8f619002bb274cd0f', 'alisha.artemchyk@gmail.com', 4, '2016-05-22 16:08:46'),
@@ -253,7 +309,7 @@ CREATE TABLE IF NOT EXISTS `widgets_abs` (
   `name` varchar(100) NOT NULL,
   `path` varchar(255) NOT NULL,
   `role_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `widgets_abs`
@@ -263,7 +319,8 @@ INSERT INTO `widgets_abs` (`id`, `name`, `path`, `role_id`) VALUES
 (1, 'Current Time', 'current_time', 6),
 (2, 'Search Form', 'search_form', 6),
 (8, 'Advertising', 'advertising', 6),
-(9, 'Advertising', 'advertising', 6);
+(9, 'Advertising', 'advertising', 6),
+(11, 'Example', 'example', 6);
 
 --
 -- Тригери `widgets_abs`
@@ -291,25 +348,27 @@ CREATE TABLE IF NOT EXISTS `widgets_act` (
   `options` varchar(255) DEFAULT NULL,
   `active` tinyint(1) DEFAULT '0',
   `role_id` int(11) NOT NULL DEFAULT '6'
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `widgets_act`
 --
 
 INSERT INTO `widgets_act` (`id`, `name`, `path`, `priority`, `position`, `options`, `active`, `role_id`) VALUES
-(45, 'Current Time', 'current_time', 10, 'wdgt-footer-3', NULL, 1, 6),
-(46, 'Current Time', 'current_time', 20, 'wdgt-sidebar-1', NULL, 1, 6),
-(50, 'Search Form', 'search_form', 99, 'wdgt-sidebar-1', NULL, 1, 6),
-(53, 'Search Form', 'search_form', 50, 'wdgt-footer-3', NULL, 1, 6),
-(71, 'Search Form', 'search_form', 70, 'wdgt-footer-1', NULL, 1, 6),
-(72, 'Current Time', 'current_time', 65, 'wdgt-footer-1', NULL, 1, 6),
-(81, 'Current Time', 'current_time', 0, 'wdgt-sidebar-1', NULL, 1, 6),
-(84, 'Current Time', 'current_time', 0, 'wdgt-footer-2', NULL, 1, 6),
-(86, 'Current Time', 'current_time', 0, 'wdgt-footer-1', NULL, 1, 6),
 (92, 'Advertising', 'advertising', 0, 'wdgt-footer-3', NULL, 1, 6),
-(93, 'Advertising', 'advertising', 0, 'wdgt-footer-2', NULL, 1, 6),
-(94, 'Advertising', 'advertising', 0, 'wdgt-footer-2', NULL, 1, 6);
+(108, 'Search Form', 'search_form', 50, 'wdgt-footer-1', NULL, 1, 6),
+(113, 'Advertising', 'advertising', 0, 'wdgt-sidebar-1', NULL, 1, 6),
+(114, 'Advertising', 'advertising', 0, 'wdgt-footer-1', NULL, 1, 6),
+(115, 'Search Form', 'search_form', 0, 'wdgt-footer-1', NULL, 1, 6),
+(116, 'Current Time', 'current_time', 500, 'wdgt-footer-1', NULL, 1, 6),
+(117, 'Advertising', 'advertising', 0, 'wdgt-footer-1', NULL, 1, 6),
+(119, 'Advertising', 'advertising', 100, 'wdgt-footer-2', NULL, 1, 6),
+(121, 'Search Form', 'search_form', 0, 'wdgt-footer-2', NULL, 1, 6),
+(122, 'Current Time', 'current_time', 850, 'wdgt-footer-3', NULL, 1, 6),
+(123, 'Advertising', 'advertising', 0, 'wdgt-footer-2', NULL, 1, 6),
+(124, 'Advertising', 'advertising', 0, 'wdgt-footer-2', NULL, 1, 6),
+(125, 'Advertising', 'advertising', 0, 'wdgt-sidebar-1', NULL, 1, 6),
+(126, 'Example', 'example', 50000, 'wdgt-footer-3', NULL, 1, 6);
 
 --
 -- Індекси збережених таблиць
@@ -331,6 +390,18 @@ ALTER TABLE `comments`
 -- Індекси таблиці `confirmation`
 --
 ALTER TABLE `confirmation`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Індекси таблиці `media`
+--
+ALTER TABLE `media`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Індекси таблиці `navigation`
+--
+ALTER TABLE `navigation`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -401,10 +472,20 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 ALTER TABLE `confirmation`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
+-- AUTO_INCREMENT для таблиці `media`
+--
+ALTER TABLE `media`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
+--
+-- AUTO_INCREMENT для таблиці `navigation`
+--
+ALTER TABLE `navigation`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+--
 -- AUTO_INCREMENT для таблиці `posts`
 --
 ALTER TABLE `posts`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT для таблиці `roles`
 --
@@ -424,7 +505,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT для таблиці `themes`
 --
 ALTER TABLE `themes`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT для таблиці `users`
 --
@@ -434,12 +515,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=81;
 -- AUTO_INCREMENT для таблиці `widgets_abs`
 --
 ALTER TABLE `widgets_abs`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблиці `widgets_act`
 --
 ALTER TABLE `widgets_act`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=95;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=127;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
