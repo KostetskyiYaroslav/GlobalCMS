@@ -80,6 +80,14 @@ CREATE TABLE `ci3db`.`media`
   `author_id` INT REFERENCES `ci3db`.`users`(`id`)
 );
 
+CREATE TABLE `ci3db`.`navigation`
+(
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `link` VARCHAR(255) NOT NULL ,
+  `priority` INT NULL DEFAULT 0
+);
+
 #endregion
 
 #region Insert
@@ -135,6 +143,3 @@ FOR EACH ROW BEGIN
 END;
 
 #endregion
-
-
-SHOW TABLES ;
