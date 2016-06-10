@@ -66,4 +66,5 @@ class Posts extends MY_Controller
         }
     }
 
+
 }

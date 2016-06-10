@@ -22,10 +22,10 @@ class Media extends MY_Controller
             ]
         );
         $this->load->view('media/view_media',
-        [
-            'media_files' => $this->data['media'],
-        ]
-    );
+            [
+                'media_files' => $this->data['media'],
+            ]
+        );
     }
 
     public function save()
