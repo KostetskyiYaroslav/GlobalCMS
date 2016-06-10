@@ -20,6 +20,7 @@ class MY_Controller extends CI_Controller
         $this->load->model('Model_widgets');
         $this->load->model('Model_themes');
         $this->load->model('Model_media');
+        $this->load->model('Model_navigation');
 
         //$this->data['site_name']    = config_item('site_name');
         $this->data['error']        = array();
@@ -37,6 +38,7 @@ class MY_Controller extends CI_Controller
         $this->data['widgets']      = NULL;
         $this->data['themes']       = NULL;
         $this->data['active_theme'] = NULL;
+        $this->data['navigation']   = NULL;
 
         if( isset($_COOKIE['CMS_login']) )
         {
@@ -49,6 +51,7 @@ class MY_Controller extends CI_Controller
 
         $this->data['users'] = $this->Model_users->get_users();
         $this->data['posts'] = $this->Model_posts->get_posts();
+        $this->data['media'] = $this->Model_media->get();
         $this->data['comments']     = $this->Model_comments->get_post_comments();
         $this->data['templates']    = $this->Model_templates->get();
         $this->data['categories']   = $this->Model_categories->get();
@@ -56,19 +59,21 @@ class MY_Controller extends CI_Controller
         $this->data['widgets']      = $this->Model_widgets->get();
         $this->data['themes']       = $this->Model_themes->get();
         $this->data['active_theme'] = $this->Model_themes->get_by(['activate' => '1']);
-        $this->data['media']        = $this->Model_media->get();
+        $this->data['navigation']   = $this->Model_navigation->get();
+
 
         $this->data['active_theme'] =
             (empty($this->data['active_theme']))
                 ? $this->Model_themes->get_by(['name' => 'Standard'])[0]
                 : $this->data['active_theme'][0];
 
-        function sort_widget($a, $b) {
+        function sort_by_priority($a, $b) {
             if($a->priority == $b->priority){ return 0 ; }
             return ($a->priority < $b->priority) ? 1 : -1;
         }
+        usort($this->data['widgets'], "sort_by_priority");
 
-        usort($this->data['widgets'], "sort_widget");
+        usort($this->data['navigation'], "sort_by_priority");
 
         $i = 0;
         foreach ($this->data['widgets'] as $widget)
