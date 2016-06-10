@@ -11,113 +11,110 @@
       <table id="2" parent="1" name="categories"/>
       <table id="3" parent="1" name="comments"/>
       <table id="4" parent="1" name="confirmation"/>
-      <table id="5" parent="1" name="posts"/>
-      <table id="6" parent="1" name="roles"/>
-      <table id="7" parent="1" name="settings"/>
-      <table id="8" parent="1" name="templates"/>
-      <table id="9" parent="1" name="themes"/>
-      <table id="10" parent="1" name="users"/>
-      <table id="11" parent="1" name="widgets_abs"/>
-      <table id="12" parent="1" name="widgets_act"/>
-      <table id="13" parent="1" name="media"/>
-      <column id="14" parent="2" name="id">
+      <table id="5" parent="1" name="media"/>
+      <table id="6" parent="1" name="navigation"/>
+      <table id="7" parent="1" name="posts"/>
+      <table id="8" parent="1" name="roles"/>
+      <table id="9" parent="1" name="settings"/>
+      <table id="10" parent="1" name="templates"/>
+      <table id="11" parent="1" name="themes"/>
+      <table id="12" parent="1" name="users"/>
+      <table id="13" parent="1" name="widgets_abs"/>
+      <table id="14" parent="1" name="widgets_act"/>
+      <column id="15" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="15" parent="2" name="name">
+      <column id="16" parent="2" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="16" parent="2" name="tags">
+      <column id="17" parent="2" name="tags">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="17" parent="2" name="role_id">
+      <column id="18" parent="2" name="role_id">
         <data-type>int(11)</data-type>
         <default-expression>&apos;6&apos;</default-expression>
       </column>
-      <key id="18" parent="2" name="PRIMARY">
+      <key id="19" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <trigger id="19" parent="2" name="lost_relation_category">
+      <trigger id="20" parent="2" name="lost_relation_category">
         <trig-events>D</trig-events>
         <trig-turn>AFTER_ROW</trig-turn>
       </trigger>
-      <column id="20" parent="3" name="id">
+      <column id="21" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="21" parent="3" name="body">
+      <column id="22" parent="3" name="body">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="22" parent="3" name="date">
+      <column id="23" parent="3" name="date">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
       </column>
-      <column id="23" parent="3" name="author_id">
+      <column id="24" parent="3" name="author_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="24" parent="3" name="post_id">
+      <column id="25" parent="3" name="post_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <key id="25" parent="3" name="PRIMARY">
+      <key id="26" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="26" parent="4" name="id">
+      <column id="27" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="27" parent="4" name="key">
+      <column id="28" parent="4" name="key">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="28" parent="4" name="login">
+      <column id="29" parent="4" name="login">
         <data-type>varchar(100)</data-type>
       </column>
-      <key id="29" parent="4" name="PRIMARY">
+      <key id="30" parent="4" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="30" parent="5" name="id">
+      <column id="31" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="31" parent="5" name="title">
+      <column id="32" parent="5" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="32" parent="5" name="body">
+      <column id="33" parent="5" name="hash_name">
         <mandatory>1</mandatory>
-        <data-type>text</data-type>
+        <data-type>varchar(255)</data-type>
       </column>
-      <column id="33" parent="5" name="author_id">
+      <column id="34" parent="5" name="link">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="34" parent="5" name="attachment">
-        <data-type>varchar(100)</data-type>
+        <data-type>varchar(255)</data-type>
       </column>
       <column id="35" parent="5" name="date">
-        <mandatory>1</mandatory>
         <data-type>datetime</data-type>
       </column>
-      <column id="36" parent="5" name="tags">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="37" parent="5" name="category_id">
+      <column id="36" parent="5" name="author_id">
         <data-type>int(11)</data-type>
-        <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <column id="38" parent="5" name="slug">
-        <data-type>varchar(100)</data-type>
+      <column id="37" parent="5" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="38" parent="5" name="share_link">
+        <data-type>varchar(255)</data-type>
       </column>
       <key id="39" parent="5" name="PRIMARY">
         <columns>id</columns>
@@ -132,102 +129,102 @@
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="42" parent="6" name="access_lvl">
+      <column id="42" parent="6" name="link">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>varchar(255)</data-type>
       </column>
-      <key id="43" parent="6" name="PRIMARY">
+      <column id="43" parent="6" name="priority">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="44" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="44" parent="7" name="id">
+      <column id="45" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="45" parent="7" name="name">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="46" parent="7" name="value">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="47" parent="7" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="48" parent="8" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="49" parent="8" name="name">
+      <column id="46" parent="7" name="title">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="50" parent="8" name="template">
+      <column id="47" parent="7" name="body">
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
-      <key id="51" parent="8" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="52" parent="9" name="id">
+      <column id="48" parent="7" name="author_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
-        <sequence-identity>1</sequence-identity>
       </column>
-      <column id="53" parent="9" name="name">
-        <mandatory>1</mandatory>
+      <column id="49" parent="7" name="attachment">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="54" parent="9" name="path">
-        <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="55" parent="9" name="author">
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="56" parent="9" name="description">
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="57" parent="9" name="screenshot">
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="58" parent="9" name="activate">
-        <mandatory>1</mandatory>
-        <data-type>tinyint(1)</data-type>
-      </column>
-      <key id="59" parent="9" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="60" parent="10" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="61" parent="10" name="login">
-        <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="62" parent="10" name="password">
-        <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="63" parent="10" name="email">
-        <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="64" parent="10" name="role_id">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;5&apos;</default-expression>
-      </column>
-      <column id="65" parent="10" name="date_created">
+      <column id="50" parent="7" name="date">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
+      </column>
+      <column id="51" parent="7" name="tags">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="52" parent="7" name="category_id">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="53" parent="7" name="slug">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <key id="54" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="55" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="56" parent="8" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="57" parent="8" name="access_lvl">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="58" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="59" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="60" parent="9" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="61" parent="9" name="value">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="62" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="63" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="64" parent="10" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="65" parent="10" name="template">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
       </column>
       <key id="66" parent="10" name="PRIMARY">
         <columns>id</columns>
@@ -244,51 +241,49 @@
       </column>
       <column id="69" parent="11" name="path">
         <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
+        <data-type>varchar(100)</data-type>
       </column>
-      <column id="70" parent="11" name="role_id">
-        <data-type>int(11)</data-type>
+      <column id="70" parent="11" name="author">
+        <data-type>varchar(100)</data-type>
       </column>
-      <key id="71" parent="11" name="PRIMARY">
+      <column id="71" parent="11" name="description">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="72" parent="11" name="screenshot">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="73" parent="11" name="activate">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <key id="74" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <trigger id="72" parent="11" name="remove_active_widgets">
-        <trig-events>D</trig-events>
-        <trig-turn>AFTER_ROW</trig-turn>
-      </trigger>
-      <column id="73" parent="12" name="id">
+      <column id="75" parent="12" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="74" parent="12" name="name">
+      <column id="76" parent="12" name="login">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="75" parent="12" name="path">
+      <column id="77" parent="12" name="password">
         <mandatory>1</mandatory>
-        <data-type>text</data-type>
+        <data-type>varchar(100)</data-type>
       </column>
-      <column id="76" parent="12" name="priority">
+      <column id="78" parent="12" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="79" parent="12" name="role_id">
         <data-type>int(11)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
+        <default-expression>&apos;5&apos;</default-expression>
       </column>
-      <column id="77" parent="12" name="position">
+      <column id="80" parent="12" name="date_created">
         <mandatory>1</mandatory>
-        <data-type>varchar(50)</data-type>
-      </column>
-      <column id="78" parent="12" name="options">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="79" parent="12" name="active">
-        <data-type>tinyint(1)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="80" parent="12" name="role_id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;6&apos;</default-expression>
+        <data-type>datetime</data-type>
       </column>
       <key id="81" parent="12" name="PRIMARY">
         <columns>id</columns>
@@ -303,28 +298,55 @@
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="84" parent="13" name="hash_name">
+      <column id="84" parent="13" name="path">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="85" parent="13" name="link">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="86" parent="13" name="date">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="87" parent="13" name="author_id">
+      <column id="85" parent="13" name="role_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="88" parent="13" name="type">
+      <key id="86" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <trigger id="87" parent="13" name="remove_active_widgets">
+        <trig-events>D</trig-events>
+        <trig-turn>AFTER_ROW</trig-turn>
+      </trigger>
+      <column id="88" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="89" parent="14" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="90" parent="14" name="path">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="91" parent="14" name="priority">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="92" parent="14" name="position">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="89" parent="13" name="share_link">
+      <column id="93" parent="14" name="options">
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="90" parent="13" name="PRIMARY">
+      <column id="94" parent="14" name="active">
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="95" parent="14" name="role_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;6&apos;</default-expression>
+      </column>
+      <key id="96" parent="14" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
